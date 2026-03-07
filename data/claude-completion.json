@@ -1,0 +1,738 @@
+{
+  "version": "2.1.70",
+  "commands": {
+    "claude": {
+      "flags": {
+        "--add-dir": {
+          "type": "dir",
+          "repeatable": true
+        },
+        "--agent": {
+          "type": "value"
+        },
+        "--agents": {
+          "type": "value"
+        },
+        "--allow-dangerously-skip-permissions": {
+          "type": "bool"
+        },
+        "--allowedTools": {
+          "type": "value",
+          "repeatable": true
+        },
+        "--allowed-tools": {
+          "type": "value",
+          "repeatable": true
+        },
+        "--append-system-prompt": {
+          "type": "value"
+        },
+        "--betas": {
+          "type": "value",
+          "repeatable": true
+        },
+        "--chrome": {
+          "type": "bool"
+        },
+        "--continue": {
+          "type": "bool",
+          "short": "-c"
+        },
+        "--dangerously-skip-permissions": {
+          "type": "bool"
+        },
+        "--debug": {
+          "type": "optional_value",
+          "short": "-d"
+        },
+        "--debug-file": {
+          "type": "file"
+        },
+        "--disable-slash-commands": {
+          "type": "bool"
+        },
+        "--disallowedTools": {
+          "type": "value",
+          "repeatable": true
+        },
+        "--disallowed-tools": {
+          "type": "value",
+          "repeatable": true
+        },
+        "--effort": {
+          "type": "choices",
+          "choices": [
+            "low",
+            "medium",
+            "high"
+          ]
+        },
+        "--fallback-model": {
+          "type": "value"
+        },
+        "--file": {
+          "type": "value",
+          "repeatable": true
+        },
+        "--fork-session": {
+          "type": "bool"
+        },
+        "--from-pr": {
+          "type": "optional_value"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--ide": {
+          "type": "bool"
+        },
+        "--include-partial-messages": {
+          "type": "bool"
+        },
+        "--input-format": {
+          "type": "choices",
+          "choices": [
+            "text",
+            "stream-json"
+          ]
+        },
+        "--json-schema": {
+          "type": "value"
+        },
+        "--max-budget-usd": {
+          "type": "value"
+        },
+        "--mcp-config": {
+          "type": "value",
+          "repeatable": true
+        },
+        "--mcp-debug": {
+          "type": "bool"
+        },
+        "--model": {
+          "type": "value"
+        },
+        "--no-chrome": {
+          "type": "bool"
+        },
+        "--no-session-persistence": {
+          "type": "bool"
+        },
+        "--output-format": {
+          "type": "choices",
+          "choices": [
+            "text",
+            "json",
+            "stream-json"
+          ]
+        },
+        "--permission-mode": {
+          "type": "choices",
+          "choices": [
+            "acceptEdits",
+            "bypassPermissions",
+            "default",
+            "dontAsk",
+            "plan"
+          ]
+        },
+        "--plugin-dir": {
+          "type": "dir",
+          "repeatable": true
+        },
+        "--print": {
+          "type": "bool",
+          "short": "-p"
+        },
+        "--replay-user-messages": {
+          "type": "bool"
+        },
+        "--resume": {
+          "type": "optional_value",
+          "short": "-r"
+        },
+        "--session-id": {
+          "type": "value"
+        },
+        "--setting-sources": {
+          "type": "choices",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        },
+        "--settings": {
+          "type": "file"
+        },
+        "--strict-mcp-config": {
+          "type": "bool"
+        },
+        "--system-prompt": {
+          "type": "value"
+        },
+        "--tmux": {
+          "type": "bool"
+        },
+        "--tools": {
+          "type": "value",
+          "repeatable": true
+        },
+        "--verbose": {
+          "type": "bool"
+        },
+        "--version": {
+          "type": "bool",
+          "short": "-v"
+        },
+        "--worktree": {
+          "type": "optional_value",
+          "short": "-w"
+        }
+      },
+      "subcommands": [
+        "agents",
+        "auth",
+        "doctor",
+        "install",
+        "mcp",
+        "plugin",
+        "setup-token",
+        "update",
+        "upgrade"
+      ]
+    },
+    "claude agents": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--setting-sources": {
+          "type": "choices",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude auth": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": [
+        "login",
+        "logout",
+        "status"
+      ]
+    },
+    "claude auth login": {
+      "flags": {
+        "--email": {
+          "type": "value"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--sso": {
+          "type": "bool"
+        }
+      },
+      "subcommands": []
+    },
+    "claude auth logout": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude auth status": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
+        },
+        "--text": {
+          "type": "bool"
+        }
+      },
+      "subcommands": []
+    },
+    "claude doctor": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude install": {
+      "flags": {
+        "--force": {
+          "type": "bool"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude mcp": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": [
+        "add",
+        "add-from-claude-desktop",
+        "add-json",
+        "get",
+        "list",
+        "remove",
+        "reset-project-choices",
+        "serve"
+      ]
+    },
+    "claude mcp add": {
+      "flags": {
+        "--callback-port": {
+          "type": "value"
+        },
+        "--client-id": {
+          "type": "value"
+        },
+        "--client-secret": {
+          "type": "bool"
+        },
+        "--env": {
+          "type": "value",
+          "short": "-e",
+          "repeatable": true
+        },
+        "--header": {
+          "type": "value",
+          "short": "-H",
+          "repeatable": true
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "local",
+            "user",
+            "project"
+          ]
+        },
+        "--transport": {
+          "type": "choices",
+          "short": "-t",
+          "choices": [
+            "stdio",
+            "sse",
+            "http"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude mcp add-from-claude-desktop": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "local",
+            "user",
+            "project"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude mcp add-json": {
+      "flags": {
+        "--client-secret": {
+          "type": "bool"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "local",
+            "user",
+            "project"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude mcp get": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude mcp list": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude mcp remove": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "local",
+            "user",
+            "project"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude mcp reset-project-choices": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude mcp serve": {
+      "flags": {
+        "--debug": {
+          "type": "bool",
+          "short": "-d"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--verbose": {
+          "type": "bool"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": [
+        "disable",
+        "enable",
+        "install",
+        "i",
+        "list",
+        "marketplace",
+        "uninstall",
+        "remove",
+        "update",
+        "validate"
+      ]
+    },
+    "claude plugin disable": {
+      "flags": {
+        "--all": {
+          "type": "bool",
+          "short": "-a"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin enable": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin install": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin i": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin list": {
+      "flags": {
+        "--available": {
+          "type": "bool"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin marketplace": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": [
+        "add",
+        "list",
+        "remove",
+        "rm",
+        "update"
+      ]
+    },
+    "claude plugin marketplace add": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        },
+        "--sparse": {
+          "type": "file",
+          "repeatable": true
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin marketplace list": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin marketplace remove": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin marketplace rm": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin marketplace update": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin uninstall": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin remove": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin update": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local",
+            "managed"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin validate": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude setup-token": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude update": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude upgrade": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    }
+  }
+}
