@@ -1,5 +1,5 @@
 {
-  "version": "2.1.70",
+  "version": "2.1.71",
   "commands": {
     "claude": {
       "flags": {
@@ -134,7 +134,8 @@
             "bypassPermissions",
             "default",
             "dontAsk",
-            "plan"
+            "plan",
+            "auto"
           ]
         },
         "--plugin-dir": {
