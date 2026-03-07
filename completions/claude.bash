@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.70
+# Generated from Claude Code v2.1.71
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -293,7 +293,7 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --permission-mode)
-                    _comp_compgen -- -W "acceptEdits bypassPermissions default dontAsk plan"
+                    _comp_compgen -- -W "acceptEdits bypassPermissions default dontAsk plan auto"
                     return 0
                     ;;
                 --plugin-dir)
