@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
+  pull-requests: read
 
 jobs:
   update:
@@ -41,22 +41,46 @@ jobs:
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Install Claude Code
+      - name: Check for existing PR
         if: steps.version-check.outputs.changed == 'true'
+        id: pr-check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          PR_COUNT=$(gh pr list --repo "${{ github.repository }}" \
+            --head "update/claude-${{ steps.version-check.outputs.latest }}" \
+            --state open --json number --jq 'length')
+          if [ "$PR_COUNT" -gt 0 ]; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install Claude Code
+        if: steps.version-check.outputs.changed == 'true' && steps.pr-check.outputs.exists != 'true'
         run: npm install -g @anthropic-ai/claude-code@${{ steps.version-check.outputs.latest }}
 
       - name: Update completion data
-        if: steps.version-check.outputs.changed == 'true'
+        if: steps.version-check.outputs.changed == 'true' && steps.pr-check.outputs.exists != 'true'
         run: make update
 
       - name: Validate
-        if: steps.version-check.outputs.changed == 'true'
+        if: steps.version-check.outputs.changed == 'true' && steps.pr-check.outputs.exists != 'true'
         run: make validate
 
+      - name: Generate App Token
+        if: steps.version-check.outputs.changed == 'true' && steps.pr-check.outputs.exists != 'true'
+        id: app-token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: ${{ secrets.AUTOMATION_APP_ID }}
+          private-key: ${{ secrets.AUTOMATION_APP_PRIVATE_KEY }}
+
       - name: Create Pull Request
-        if: steps.version-check.outputs.changed == 'true'
+        if: steps.version-check.outputs.changed == 'true' && steps.pr-check.outputs.exists != 'true'
         uses: peter-evans/create-pull-request@c0f553fe549906ede9cf27b5156039d195d2ece0 # v8.1.0
         with:
+          token: ${{ steps.app-token.outputs.token }}
           branch: update/claude-${{ steps.version-check.outputs.latest }}
           delete-branch: true
           title: "Update completion data for Claude Code v${{ steps.version-check.outputs.latest }}"
