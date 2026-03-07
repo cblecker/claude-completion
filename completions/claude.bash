@@ -3,6 +3,13 @@
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
+# Compatibility shim for bash-completion 2.11 (Ubuntu 24.04) vs 2.12+
+if ! declare -F _comp_initialize >/dev/null 2>&1; then
+    _comp_initialize() { _init_completion "$@"; }
+    _comp_compgen() { shift; COMPREPLY=($(compgen "$@")); }
+    _comp_compgen_filedir() { _filedir "$@"; }
+fi
+
 _comp_cmd_claude()
 {
     local cur prev words cword was_split
