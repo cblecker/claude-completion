@@ -1,0 +1,40 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths: ['data/VERSION']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Read version
+        id: version
+        run: echo "version=$(cat data/VERSION)" >> "$GITHUB_OUTPUT"
+
+      - name: Check if tag exists
+        id: check-tag
+        run: |
+          if gh release view "v${{ steps.version.outputs.version }}" > /dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Create release
+        if: steps.check-tag.outputs.exists == 'false'
+        run: |
+          gh release create "v${{ steps.version.outputs.version }}" \
+            --title "v${{ steps.version.outputs.version }}" \
+            --notes "Bash completion for Claude Code v${{ steps.version.outputs.version }}."
+        env:
+          GH_TOKEN: ${{ github.token }}
