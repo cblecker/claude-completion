@@ -27,6 +27,15 @@ def generate():
     lines.append("# Requires bash-completion@2")
     lines.append("")
 
+    # Compatibility shim for bash-completion 2.11 vs 2.12+
+    lines.append("# Compatibility shim for bash-completion 2.11 (Ubuntu 24.04) vs 2.12+")
+    lines.append("if ! declare -F _comp_initialize >/dev/null 2>&1; then")
+    lines.append('    _comp_initialize() { _init_completion "$@"; }')
+    lines.append('    _comp_compgen() { shift; COMPREPLY=($(compgen "$@")); }')
+    lines.append('    _comp_compgen_filedir() { _filedir "$@"; }')
+    lines.append("fi")
+    lines.append("")
+
     # Main completion function
     lines.append("_comp_cmd_claude()")
     lines.append("{")
