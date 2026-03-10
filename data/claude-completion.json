@@ -1,5 +1,5 @@
 {
-  "version": "2.1.71",
+  "version": "2.1.72",
   "commands": {
     "claude": {
       "flags": {
@@ -30,6 +30,9 @@
         "--betas": {
           "type": "value",
           "repeatable": true
+        },
+        "--brief": {
+          "type": "bool"
         },
         "--chrome": {
           "type": "bool"
@@ -64,7 +67,8 @@
           "choices": [
             "low",
             "medium",
-            "high"
+            "high",
+            "max"
           ]
         },
         "--fallback-model": {
@@ -199,6 +203,7 @@
         "install",
         "mcp",
         "plugin",
+        "plugins",
         "setup-token",
         "update",
         "upgrade"
@@ -700,6 +705,256 @@
       "subcommands": []
     },
     "claude plugin validate": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": [
+        "disable",
+        "enable",
+        "install",
+        "i",
+        "list",
+        "marketplace",
+        "uninstall",
+        "remove",
+        "update",
+        "validate"
+      ]
+    },
+    "claude plugins disable": {
+      "flags": {
+        "--all": {
+          "type": "bool",
+          "short": "-a"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins enable": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins install": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins i": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins list": {
+      "flags": {
+        "--available": {
+          "type": "bool"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins marketplace": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": [
+        "add",
+        "list",
+        "remove",
+        "rm",
+        "update"
+      ]
+    },
+    "claude plugins marketplace add": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        },
+        "--sparse": {
+          "type": "file",
+          "repeatable": true
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins marketplace list": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins marketplace remove": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins marketplace rm": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins marketplace update": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins uninstall": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins remove": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins update": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local",
+            "managed"
+          ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins validate": {
       "flags": {
         "--help": {
           "type": "bool",
