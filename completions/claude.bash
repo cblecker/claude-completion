@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.71
+# Generated from Claude Code v2.1.72
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -76,6 +76,22 @@ _comp_cmd_claude__has_command()
         "claude plugin uninstall") return 0 ;;
         "claude plugin update") return 0 ;;
         "claude plugin validate") return 0 ;;
+        "claude plugins") return 0 ;;
+        "claude plugins disable") return 0 ;;
+        "claude plugins enable") return 0 ;;
+        "claude plugins i") return 0 ;;
+        "claude plugins install") return 0 ;;
+        "claude plugins list") return 0 ;;
+        "claude plugins marketplace") return 0 ;;
+        "claude plugins marketplace add") return 0 ;;
+        "claude plugins marketplace list") return 0 ;;
+        "claude plugins marketplace remove") return 0 ;;
+        "claude plugins marketplace rm") return 0 ;;
+        "claude plugins marketplace update") return 0 ;;
+        "claude plugins remove") return 0 ;;
+        "claude plugins uninstall") return 0 ;;
+        "claude plugins update") return 0 ;;
+        "claude plugins validate") return 0 ;;
         "claude setup-token") return 0 ;;
         "claude update") return 0 ;;
         "claude upgrade") return 0 ;;
@@ -96,9 +112,9 @@ _comp_cmd_claude__complete()
     case "$1" in
         "claude")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --allowed-tools --allowedTools --append-system-prompt --betas --chrome --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --disallowed-tools --disallowedTools --effort --fallback-model --file --fork-session --from-pr --help --ide --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --mcp-debug --model --no-chrome --no-session-persistence --output-format --permission-mode --plugin-dir --print --replay-user-messages --resume --session-id --setting-sources --settings --strict-mcp-config --system-prompt --tmux --tools --verbose --version --worktree -c -d -h -p -r -v -w"
+                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --allowed-tools --allowedTools --append-system-prompt --betas --brief --chrome --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --disallowed-tools --disallowedTools --effort --fallback-model --file --fork-session --from-pr --help --ide --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --mcp-debug --model --no-chrome --no-session-persistence --output-format --permission-mode --plugin-dir --print --replay-user-messages --resume --session-id --setting-sources --settings --strict-mcp-config --system-prompt --tmux --tools --verbose --version --worktree -c -d -h -p -r -v -w"
             else
-                _comp_compgen -- -W "agents auth doctor install mcp plugin setup-token update upgrade"
+                _comp_compgen -- -W "agents auth doctor install mcp plugin plugins setup-token update upgrade"
             fi
             ;;
         "claude agents")
@@ -213,6 +229,62 @@ _comp_cmd_claude__complete()
         "claude plugin validate")
             _comp_compgen -- -W "--help -h"
             ;;
+        "claude plugins")
+            if [[ "$cur" == -* ]]; then
+                _comp_compgen -- -W "--help -h"
+            else
+                _comp_compgen -- -W "disable enable i install list marketplace remove uninstall update validate"
+            fi
+            ;;
+        "claude plugins disable")
+            _comp_compgen -- -W "--all --help --scope -a -h -s"
+            ;;
+        "claude plugins enable")
+            _comp_compgen -- -W "--help --scope -h -s"
+            ;;
+        "claude plugins i")
+            _comp_compgen -- -W "--help --scope -h -s"
+            ;;
+        "claude plugins install")
+            _comp_compgen -- -W "--help --scope -h -s"
+            ;;
+        "claude plugins list")
+            _comp_compgen -- -W "--available --help --json -h"
+            ;;
+        "claude plugins marketplace")
+            if [[ "$cur" == -* ]]; then
+                _comp_compgen -- -W "--help -h"
+            else
+                _comp_compgen -- -W "add list remove rm update"
+            fi
+            ;;
+        "claude plugins marketplace add")
+            _comp_compgen -- -W "--help --scope --sparse -h"
+            ;;
+        "claude plugins marketplace list")
+            _comp_compgen -- -W "--help --json -h"
+            ;;
+        "claude plugins marketplace remove")
+            _comp_compgen -- -W "--help -h"
+            ;;
+        "claude plugins marketplace rm")
+            _comp_compgen -- -W "--help -h"
+            ;;
+        "claude plugins marketplace update")
+            _comp_compgen -- -W "--help -h"
+            ;;
+        "claude plugins remove")
+            _comp_compgen -- -W "--help --scope -h -s"
+            ;;
+        "claude plugins uninstall")
+            _comp_compgen -- -W "--help --scope -h -s"
+            ;;
+        "claude plugins update")
+            _comp_compgen -- -W "--help --scope -h -s"
+            ;;
+        "claude plugins validate")
+            _comp_compgen -- -W "--help -h"
+            ;;
         "claude setup-token")
             _comp_compgen -- -W "--help -h"
             ;;
@@ -263,7 +335,7 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --effort)
-                    _comp_compgen -- -W "low medium high"
+                    _comp_compgen -- -W "low medium high max"
                     return 0
                     ;;
                 --fallback-model)
@@ -443,6 +515,74 @@ _comp_cmd_claude__flag_values()
             esac
             ;;
         "claude plugin update")
+            case "$prev" in
+                --scope|-s)
+                    _comp_compgen -- -W "user project local managed"
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins disable")
+            case "$prev" in
+                --scope|-s)
+                    _comp_compgen -- -W "user project local"
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins enable")
+            case "$prev" in
+                --scope|-s)
+                    _comp_compgen -- -W "user project local"
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins i")
+            case "$prev" in
+                --scope|-s)
+                    _comp_compgen -- -W "user project local"
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins install")
+            case "$prev" in
+                --scope|-s)
+                    _comp_compgen -- -W "user project local"
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins marketplace add")
+            case "$prev" in
+                --scope)
+                    _comp_compgen -- -W "user project local"
+                    return 0
+                    ;;
+                --sparse)
+                    _comp_compgen_filedir
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins remove")
+            case "$prev" in
+                --scope|-s)
+                    _comp_compgen -- -W "user project local"
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins uninstall")
+            case "$prev" in
+                --scope|-s)
+                    _comp_compgen -- -W "user project local"
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins update")
             case "$prev" in
                 --scope|-s)
                     _comp_compgen -- -W "user project local managed"
