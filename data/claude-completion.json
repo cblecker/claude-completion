@@ -1,5 +1,5 @@
 {
-  "version": "2.1.74",
+  "version": "2.1.75",
   "commands": {
     "claude": {
       "flags": {
@@ -199,7 +199,6 @@
       "subcommands": [
         "agents",
         "auth",
-        "auto-mode",
         "doctor",
         "install",
         "mcp",
@@ -275,36 +274,6 @@
         },
         "--text": {
           "type": "bool"
-        }
-      },
-      "subcommands": []
-    },
-    "claude auto-mode": {
-      "flags": {
-        "--help": {
-          "type": "bool",
-          "short": "-h"
-        }
-      },
-      "subcommands": [
-        "config",
-        "defaults"
-      ]
-    },
-    "claude auto-mode config": {
-      "flags": {
-        "--help": {
-          "type": "bool",
-          "short": "-h"
-        }
-      },
-      "subcommands": []
-    },
-    "claude auto-mode defaults": {
-      "flags": {
-        "--help": {
-          "type": "bool",
-          "short": "-h"
         }
       },
       "subcommands": []
