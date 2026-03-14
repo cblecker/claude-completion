@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.75
+# Generated from Claude Code v2.1.76
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -112,7 +112,7 @@ _comp_cmd_claude__complete()
     case "$1" in
         "claude")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --allowed-tools --allowedTools --append-system-prompt --betas --brief --chrome --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --disallowed-tools --disallowedTools --effort --fallback-model --file --fork-session --from-pr --help --ide --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --mcp-debug --model --no-chrome --no-session-persistence --output-format --permission-mode --plugin-dir --print --replay-user-messages --resume --session-id --setting-sources --settings --strict-mcp-config --system-prompt --tmux --tools --verbose --version --worktree -c -d -h -p -r -v -w"
+                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --allowed-tools --allowedTools --append-system-prompt --betas --brief --chrome --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --disallowed-tools --disallowedTools --effort --fallback-model --file --fork-session --from-pr --help --ide --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --mcp-debug --model --name --no-chrome --no-session-persistence --output-format --permission-mode --plugin-dir --print --replay-user-messages --resume --session-id --setting-sources --settings --strict-mcp-config --system-prompt --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
             else
                 _comp_compgen -- -W "agents auth doctor install mcp plugin plugins setup-token update upgrade"
             fi
@@ -358,6 +358,9 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --model)
+                    return 0
+                    ;;
+                --name|-n)
                     return 0
                     ;;
                 --output-format)
