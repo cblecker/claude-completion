@@ -1,5 +1,5 @@
 {
-  "version": "2.1.75",
+  "version": "2.1.76",
   "commands": {
     "claude": {
       "flags": {
@@ -117,6 +117,10 @@
         "--model": {
           "type": "value"
         },
+        "--name": {
+          "type": "value",
+          "short": "-n"
+        },
         "--no-chrome": {
           "type": "bool"
         },
@@ -143,8 +147,7 @@
           ]
         },
         "--plugin-dir": {
-          "type": "dir",
-          "repeatable": true
+          "type": "dir"
         },
         "--print": {
           "type": "bool",
