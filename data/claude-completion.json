@@ -1,5 +1,5 @@
 {
-  "version": "2.1.77",
+  "version": "2.1.78",
   "commands": {
     "claude": {
       "flags": {
@@ -658,6 +658,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--keep-data": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "short": "-s",
@@ -675,6 +678,9 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--keep-data": {
+          "type": "bool"
         },
         "--scope": {
           "type": "choices",
@@ -908,6 +914,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--keep-data": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "short": "-s",
@@ -925,6 +934,9 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--keep-data": {
+          "type": "bool"
         },
         "--scope": {
           "type": "choices",
