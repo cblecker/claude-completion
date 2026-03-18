@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.77
+# Generated from Claude Code v2.1.78
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -218,10 +218,10 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--help -h"
             ;;
         "claude plugin remove")
-            _comp_compgen -- -W "--help --scope -h -s"
+            _comp_compgen -- -W "--help --keep-data --scope -h -s"
             ;;
         "claude plugin uninstall")
-            _comp_compgen -- -W "--help --scope -h -s"
+            _comp_compgen -- -W "--help --keep-data --scope -h -s"
             ;;
         "claude plugin update")
             _comp_compgen -- -W "--help --scope -h -s"
@@ -274,10 +274,10 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--help -h"
             ;;
         "claude plugins remove")
-            _comp_compgen -- -W "--help --scope -h -s"
+            _comp_compgen -- -W "--help --keep-data --scope -h -s"
             ;;
         "claude plugins uninstall")
-            _comp_compgen -- -W "--help --scope -h -s"
+            _comp_compgen -- -W "--help --keep-data --scope -h -s"
             ;;
         "claude plugins update")
             _comp_compgen -- -W "--help --scope -h -s"
