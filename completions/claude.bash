@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.78
+# Generated from Claude Code v2.1.79
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -128,7 +128,7 @@ _comp_cmd_claude__complete()
             fi
             ;;
         "claude auth login")
-            _comp_compgen -- -W "--email --help --sso -h"
+            _comp_compgen -- -W "--claudeai --console --email --help --sso -h"
             ;;
         "claude auth logout")
             _comp_compgen -- -W "--help -h"

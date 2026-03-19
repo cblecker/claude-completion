@@ -1,5 +1,5 @@
 {
-  "version": "2.1.78",
+  "version": "2.1.79",
   "commands": {
     "claude": {
       "flags": {
@@ -244,6 +244,12 @@
     },
     "claude auth login": {
       "flags": {
+        "--claudeai": {
+          "type": "bool"
+        },
+        "--console": {
+          "type": "bool"
+        },
         "--email": {
           "type": "value"
         },
