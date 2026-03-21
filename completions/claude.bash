@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.80
+# Generated from Claude Code v2.1.81
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -49,6 +49,10 @@ _comp_cmd_claude__has_command()
         "claude auth login") return 0 ;;
         "claude auth logout") return 0 ;;
         "claude auth status") return 0 ;;
+        "claude auto-mode") return 0 ;;
+        "claude auto-mode config") return 0 ;;
+        "claude auto-mode critique") return 0 ;;
+        "claude auto-mode defaults") return 0 ;;
         "claude doctor") return 0 ;;
         "claude install") return 0 ;;
         "claude mcp") return 0 ;;
@@ -112,9 +116,9 @@ _comp_cmd_claude__complete()
     case "$1" in
         "claude")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --allowed-tools --allowedTools --append-system-prompt --betas --brief --chrome --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --disallowed-tools --disallowedTools --effort --fallback-model --file --fork-session --from-pr --help --ide --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --mcp-debug --model --name --no-chrome --no-session-persistence --output-format --permission-mode --plugin-dir --print --replay-user-messages --resume --session-id --setting-sources --settings --strict-mcp-config --system-prompt --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
+                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --allowed-tools --allowedTools --append-system-prompt --bare --betas --brief --chrome --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --disallowed-tools --disallowedTools --effort --fallback-model --file --fork-session --from-pr --help --ide --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --mcp-debug --model --name --no-chrome --no-session-persistence --output-format --permission-mode --plugin-dir --print --replay-user-messages --resume --session-id --setting-sources --settings --strict-mcp-config --system-prompt --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
             else
-                _comp_compgen -- -W "agents auth doctor install mcp plugin plugins setup-token update upgrade"
+                _comp_compgen -- -W "agents auth auto-mode doctor install mcp plugin plugins setup-token update upgrade"
             fi
             ;;
         "claude agents")
@@ -135,6 +139,22 @@ _comp_cmd_claude__complete()
             ;;
         "claude auth status")
             _comp_compgen -- -W "--help --json --text -h"
+            ;;
+        "claude auto-mode")
+            if [[ "$cur" == -* ]]; then
+                _comp_compgen -- -W "--help -h"
+            else
+                _comp_compgen -- -W "config critique defaults"
+            fi
+            ;;
+        "claude auto-mode config")
+            _comp_compgen -- -W "--help -h"
+            ;;
+        "claude auto-mode critique")
+            _comp_compgen -- -W "--help --model -h"
+            ;;
+        "claude auto-mode defaults")
+            _comp_compgen -- -W "--help -h"
             ;;
         "claude doctor")
             _comp_compgen -- -W "--help -h"
@@ -405,6 +425,13 @@ _comp_cmd_claude__flag_values()
         "claude auth login")
             case "$prev" in
                 --email)
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude auto-mode critique")
+            case "$prev" in
+                --model)
                     return 0
                     ;;
             esac

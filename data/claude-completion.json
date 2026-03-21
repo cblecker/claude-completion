@@ -1,5 +1,5 @@
 {
-  "version": "2.1.80",
+  "version": "2.1.81",
   "commands": {
     "claude": {
       "flags": {
@@ -26,6 +26,9 @@
         },
         "--append-system-prompt": {
           "type": "value"
+        },
+        "--bare": {
+          "type": "bool"
         },
         "--betas": {
           "type": "value",
@@ -202,6 +205,7 @@
       "subcommands": [
         "agents",
         "auth",
+        "auto-mode",
         "doctor",
         "install",
         "mcp",
@@ -283,6 +287,49 @@
         },
         "--text": {
           "type": "bool"
+        }
+      },
+      "subcommands": []
+    },
+    "claude auto-mode": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": [
+        "config",
+        "critique",
+        "defaults"
+      ]
+    },
+    "claude auto-mode config": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude auto-mode critique": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--model": {
+          "type": "value"
+        }
+      },
+      "subcommands": []
+    },
+    "claude auto-mode defaults": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
         }
       },
       "subcommands": []
