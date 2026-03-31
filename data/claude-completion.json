@@ -1,5 +1,5 @@
 {
-  "version": "2.1.87",
+  "version": "2.1.88",
   "commands": {
     "claude": {
       "flags": {
@@ -92,6 +92,9 @@
           "short": "-h"
         },
         "--ide": {
+          "type": "bool"
+        },
+        "--include-hook-events": {
           "type": "bool"
         },
         "--include-partial-messages": {
