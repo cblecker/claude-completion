@@ -1,5 +1,5 @@
 {
-  "version": "2.1.91",
+  "version": "2.1.92",
   "commands": {
     "claude": {
       "flags": {
@@ -158,6 +158,9 @@
         "--print": {
           "type": "bool",
           "short": "-p"
+        },
+        "--remote-control-session-name-prefix": {
+          "type": "value"
         },
         "--replay-user-messages": {
           "type": "bool"
