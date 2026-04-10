@@ -1,5 +1,5 @@
 {
-  "version": "2.1.97",
+  "version": "2.1.98",
   "commands": {
     "claude": {
       "flags": {
@@ -73,6 +73,9 @@
             "high",
             "max"
           ]
+        },
+        "--exclude-dynamic-system-prompt-sections": {
+          "type": "bool"
         },
         "--fallback-model": {
           "type": "value"
