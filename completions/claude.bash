@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.110
+# Generated from Claude Code v2.1.111
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -355,7 +355,7 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --effort)
-                    _comp_compgen -- -W "low medium high max"
+                    _comp_compgen -- -W "low medium high xhigh max"
                     return 0
                     ;;
                 --fallback-model)

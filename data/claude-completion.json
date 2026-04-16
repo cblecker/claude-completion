@@ -1,5 +1,5 @@
 {
-  "version": "2.1.110",
+  "version": "2.1.111",
   "commands": {
     "claude": {
       "flags": {
@@ -71,6 +71,7 @@
             "low",
             "medium",
             "high",
+            "xhigh",
             "max"
           ]
         },
