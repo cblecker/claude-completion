@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.117
+# Generated from Claude Code v2.1.118
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -77,6 +77,7 @@ _comp_cmd_claude__has_command()
         "claude plugin marketplace rm") return 0 ;;
         "claude plugin marketplace update") return 0 ;;
         "claude plugin remove") return 0 ;;
+        "claude plugin tag") return 0 ;;
         "claude plugin uninstall") return 0 ;;
         "claude plugin update") return 0 ;;
         "claude plugin validate") return 0 ;;
@@ -93,6 +94,7 @@ _comp_cmd_claude__has_command()
         "claude plugins marketplace rm") return 0 ;;
         "claude plugins marketplace update") return 0 ;;
         "claude plugins remove") return 0 ;;
+        "claude plugins tag") return 0 ;;
         "claude plugins uninstall") return 0 ;;
         "claude plugins update") return 0 ;;
         "claude plugins validate") return 0 ;;
@@ -197,7 +199,7 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "disable enable i install list marketplace remove uninstall update validate"
+                _comp_compgen -- -W "disable enable i install list marketplace remove tag uninstall update validate"
             fi
             ;;
         "claude plugin disable")
@@ -240,6 +242,9 @@ _comp_cmd_claude__complete()
         "claude plugin remove")
             _comp_compgen -- -W "--help --keep-data --scope -h -s"
             ;;
+        "claude plugin tag")
+            _comp_compgen -- -W "--dry-run --force --help --message --push --remote -f -h -m"
+            ;;
         "claude plugin uninstall")
             _comp_compgen -- -W "--help --keep-data --scope -h -s"
             ;;
@@ -253,7 +258,7 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "disable enable i install list marketplace remove uninstall update validate"
+                _comp_compgen -- -W "disable enable i install list marketplace remove tag uninstall update validate"
             fi
             ;;
         "claude plugins disable")
@@ -295,6 +300,9 @@ _comp_cmd_claude__complete()
             ;;
         "claude plugins remove")
             _comp_compgen -- -W "--help --keep-data --scope -h -s"
+            ;;
+        "claude plugins tag")
+            _comp_compgen -- -W "--dry-run --force --help --message --push --remote -f -h -m"
             ;;
         "claude plugins uninstall")
             _comp_compgen -- -W "--help --keep-data --scope -h -s"
@@ -539,6 +547,16 @@ _comp_cmd_claude__flag_values()
                     ;;
             esac
             ;;
+        "claude plugin tag")
+            case "$prev" in
+                --message|-m)
+                    return 0
+                    ;;
+                --remote)
+                    return 0
+                    ;;
+            esac
+            ;;
         "claude plugin uninstall")
             case "$prev" in
                 --scope|-s)
@@ -603,6 +621,16 @@ _comp_cmd_claude__flag_values()
             case "$prev" in
                 --scope|-s)
                     _comp_compgen -- -W "user project local"
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins tag")
+            case "$prev" in
+                --message|-m)
+                    return 0
+                    ;;
+                --remote)
                     return 0
                     ;;
             esac

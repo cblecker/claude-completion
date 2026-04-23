@@ -1,5 +1,5 @@
 {
-  "version": "2.1.117",
+  "version": "2.1.118",
   "commands": {
     "claude": {
       "flags": {
@@ -543,6 +543,7 @@
         "i",
         "list",
         "marketplace",
+        "tag",
         "uninstall",
         "remove",
         "update",
@@ -715,6 +716,32 @@
       },
       "subcommands": []
     },
+    "claude plugin tag": {
+      "flags": {
+        "--dry-run": {
+          "type": "bool"
+        },
+        "--force": {
+          "type": "bool",
+          "short": "-f"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--message": {
+          "type": "value",
+          "short": "-m"
+        },
+        "--push": {
+          "type": "bool"
+        },
+        "--remote": {
+          "type": "value"
+        }
+      },
+      "subcommands": []
+    },
     "claude plugin uninstall": {
       "flags": {
         "--help": {
@@ -799,6 +826,7 @@
         "i",
         "list",
         "marketplace",
+        "tag",
         "uninstall",
         "remove",
         "update",
@@ -967,6 +995,32 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins tag": {
+      "flags": {
+        "--dry-run": {
+          "type": "bool"
+        },
+        "--force": {
+          "type": "bool",
+          "short": "-f"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--message": {
+          "type": "value",
+          "short": "-m"
+        },
+        "--push": {
+          "type": "bool"
+        },
+        "--remote": {
+          "type": "value"
         }
       },
       "subcommands": []
