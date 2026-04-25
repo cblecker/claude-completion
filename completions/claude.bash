@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.120
+# Generated from Claude Code v2.1.119
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -99,7 +99,6 @@ _comp_cmd_claude__has_command()
         "claude plugins update") return 0 ;;
         "claude plugins validate") return 0 ;;
         "claude setup-token") return 0 ;;
-        "claude ultrareview") return 0 ;;
         "claude update") return 0 ;;
         "claude upgrade") return 0 ;;
         *) return 1 ;;
@@ -121,7 +120,7 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --allowed-tools --allowedTools --append-system-prompt --bare --betas --brief --chrome --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --disallowed-tools --disallowedTools --effort --exclude-dynamic-system-prompt-sections --fallback-model --file --fork-session --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --mcp-debug --model --name --no-chrome --no-session-persistence --output-format --permission-mode --plugin-dir --print --remote-control-session-name-prefix --replay-user-messages --resume --session-id --setting-sources --settings --strict-mcp-config --system-prompt --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
             else
-                _comp_compgen -- -W "agents auth auto-mode doctor install mcp plugin plugins setup-token ultrareview update upgrade"
+                _comp_compgen -- -W "agents auth auto-mode doctor install mcp plugin plugins setup-token update upgrade"
             fi
             ;;
         "claude agents")
@@ -316,9 +315,6 @@ _comp_cmd_claude__complete()
             ;;
         "claude setup-token")
             _comp_compgen -- -W "--help -h"
-            ;;
-        "claude ultrareview")
-            _comp_compgen -- -W "--help --json --timeout -h"
             ;;
         "claude update")
             _comp_compgen -- -W "--help -h"
@@ -651,13 +647,6 @@ _comp_cmd_claude__flag_values()
             case "$prev" in
                 --scope|-s)
                     _comp_compgen -- -W "user project local managed"
-                    return 0
-                    ;;
-            esac
-            ;;
-        "claude ultrareview")
-            case "$prev" in
-                --timeout)
                     return 0
                     ;;
             esac

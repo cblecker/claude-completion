@@ -1,5 +1,5 @@
 {
-  "version": "2.1.120",
+  "version": "2.1.119",
   "commands": {
     "claude": {
       "flags": {
@@ -222,7 +222,6 @@
         "plugin",
         "plugins",
         "setup-token",
-        "ultrareview",
         "update",
         "upgrade"
       ]
@@ -1101,21 +1100,6 @@
         "--help": {
           "type": "bool",
           "short": "-h"
-        }
-      },
-      "subcommands": []
-    },
-    "claude ultrareview": {
-      "flags": {
-        "--help": {
-          "type": "bool",
-          "short": "-h"
-        },
-        "--json": {
-          "type": "bool"
-        },
-        "--timeout": {
-          "type": "value"
         }
       },
       "subcommands": []
