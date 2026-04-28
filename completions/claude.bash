@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.120
+# Generated from Claude Code v2.1.121
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -65,6 +65,7 @@ _comp_cmd_claude__has_command()
         "claude mcp reset-project-choices") return 0 ;;
         "claude mcp serve") return 0 ;;
         "claude plugin") return 0 ;;
+        "claude plugin autoremove") return 0 ;;
         "claude plugin disable") return 0 ;;
         "claude plugin enable") return 0 ;;
         "claude plugin i") return 0 ;;
@@ -76,12 +77,14 @@ _comp_cmd_claude__has_command()
         "claude plugin marketplace remove") return 0 ;;
         "claude plugin marketplace rm") return 0 ;;
         "claude plugin marketplace update") return 0 ;;
+        "claude plugin prune") return 0 ;;
         "claude plugin remove") return 0 ;;
         "claude plugin tag") return 0 ;;
         "claude plugin uninstall") return 0 ;;
         "claude plugin update") return 0 ;;
         "claude plugin validate") return 0 ;;
         "claude plugins") return 0 ;;
+        "claude plugins autoremove") return 0 ;;
         "claude plugins disable") return 0 ;;
         "claude plugins enable") return 0 ;;
         "claude plugins i") return 0 ;;
@@ -93,6 +96,7 @@ _comp_cmd_claude__has_command()
         "claude plugins marketplace remove") return 0 ;;
         "claude plugins marketplace rm") return 0 ;;
         "claude plugins marketplace update") return 0 ;;
+        "claude plugins prune") return 0 ;;
         "claude plugins remove") return 0 ;;
         "claude plugins tag") return 0 ;;
         "claude plugins uninstall") return 0 ;;
@@ -200,8 +204,11 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "disable enable i install list marketplace remove tag uninstall update validate"
+                _comp_compgen -- -W "autoremove disable enable i install list marketplace prune remove tag uninstall update validate"
             fi
+            ;;
+        "claude plugin autoremove")
+            _comp_compgen -- -W "--dry-run --help --scope --yes -h -s -y"
             ;;
         "claude plugin disable")
             _comp_compgen -- -W "--all --help --scope -a -h -s"
@@ -240,14 +247,17 @@ _comp_cmd_claude__complete()
         "claude plugin marketplace update")
             _comp_compgen -- -W "--help -h"
             ;;
+        "claude plugin prune")
+            _comp_compgen -- -W "--dry-run --help --scope --yes -h -s -y"
+            ;;
         "claude plugin remove")
-            _comp_compgen -- -W "--help --keep-data --scope -h -s"
+            _comp_compgen -- -W "--help --keep-data --prune --scope --yes -h -s -y"
             ;;
         "claude plugin tag")
             _comp_compgen -- -W "--dry-run --force --help --message --push --remote -f -h -m"
             ;;
         "claude plugin uninstall")
-            _comp_compgen -- -W "--help --keep-data --scope -h -s"
+            _comp_compgen -- -W "--help --keep-data --prune --scope --yes -h -s -y"
             ;;
         "claude plugin update")
             _comp_compgen -- -W "--help --scope -h -s"
@@ -259,8 +269,11 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "disable enable i install list marketplace remove tag uninstall update validate"
+                _comp_compgen -- -W "autoremove disable enable i install list marketplace prune remove tag uninstall update validate"
             fi
+            ;;
+        "claude plugins autoremove")
+            _comp_compgen -- -W "--dry-run --help --scope --yes -h -s -y"
             ;;
         "claude plugins disable")
             _comp_compgen -- -W "--all --help --scope -a -h -s"
@@ -299,14 +312,17 @@ _comp_cmd_claude__complete()
         "claude plugins marketplace update")
             _comp_compgen -- -W "--help -h"
             ;;
+        "claude plugins prune")
+            _comp_compgen -- -W "--dry-run --help --scope --yes -h -s -y"
+            ;;
         "claude plugins remove")
-            _comp_compgen -- -W "--help --keep-data --scope -h -s"
+            _comp_compgen -- -W "--help --keep-data --prune --scope --yes -h -s -y"
             ;;
         "claude plugins tag")
             _comp_compgen -- -W "--dry-run --force --help --message --push --remote -f -h -m"
             ;;
         "claude plugins uninstall")
-            _comp_compgen -- -W "--help --keep-data --scope -h -s"
+            _comp_compgen -- -W "--help --keep-data --prune --scope --yes -h -s -y"
             ;;
         "claude plugins update")
             _comp_compgen -- -W "--help --scope -h -s"
@@ -499,6 +515,14 @@ _comp_cmd_claude__flag_values()
                     ;;
             esac
             ;;
+        "claude plugin autoremove")
+            case "$prev" in
+                --scope|-s)
+                    _comp_compgen -- -W "user project local"
+                    return 0
+                    ;;
+            esac
+            ;;
         "claude plugin disable")
             case "$prev" in
                 --scope|-s)
@@ -543,6 +567,14 @@ _comp_cmd_claude__flag_values()
                     ;;
             esac
             ;;
+        "claude plugin prune")
+            case "$prev" in
+                --scope|-s)
+                    _comp_compgen -- -W "user project local"
+                    return 0
+                    ;;
+            esac
+            ;;
         "claude plugin remove")
             case "$prev" in
                 --scope|-s)
@@ -573,6 +605,14 @@ _comp_cmd_claude__flag_values()
             case "$prev" in
                 --scope|-s)
                     _comp_compgen -- -W "user project local managed"
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins autoremove")
+            case "$prev" in
+                --scope|-s)
+                    _comp_compgen -- -W "user project local"
                     return 0
                     ;;
             esac
@@ -617,6 +657,14 @@ _comp_cmd_claude__flag_values()
                     ;;
                 --sparse)
                     _comp_compgen_filedir
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins prune")
+            case "$prev" in
+                --scope|-s)
+                    _comp_compgen -- -W "user project local"
                     return 0
                     ;;
             esac

@@ -1,5 +1,5 @@
 {
-  "version": "2.1.120",
+  "version": "2.1.121",
   "commands": {
     "claude": {
       "flags": {
@@ -544,6 +544,8 @@
         "i",
         "list",
         "marketplace",
+        "prune",
+        "autoremove",
         "tag",
         "uninstall",
         "remove",
@@ -717,6 +719,56 @@
       },
       "subcommands": []
     },
+    "claude plugin prune": {
+      "flags": {
+        "--dry-run": {
+          "type": "bool"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin autoremove": {
+      "flags": {
+        "--dry-run": {
+          "type": "bool"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
+        }
+      },
+      "subcommands": []
+    },
     "claude plugin tag": {
       "flags": {
         "--dry-run": {
@@ -752,6 +804,9 @@
         "--keep-data": {
           "type": "bool"
         },
+        "--prune": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "short": "-s",
@@ -760,6 +815,10 @@
             "project",
             "local"
           ]
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
         }
       },
       "subcommands": []
@@ -773,6 +832,9 @@
         "--keep-data": {
           "type": "bool"
         },
+        "--prune": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "short": "-s",
@@ -781,6 +843,10 @@
             "project",
             "local"
           ]
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
         }
       },
       "subcommands": []
@@ -827,6 +893,8 @@
         "i",
         "list",
         "marketplace",
+        "prune",
+        "autoremove",
         "tag",
         "uninstall",
         "remove",
@@ -1000,6 +1068,56 @@
       },
       "subcommands": []
     },
+    "claude plugins prune": {
+      "flags": {
+        "--dry-run": {
+          "type": "bool"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins autoremove": {
+      "flags": {
+        "--dry-run": {
+          "type": "bool"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--scope": {
+          "type": "choices",
+          "short": "-s",
+          "choices": [
+            "user",
+            "project",
+            "local"
+          ]
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
+        }
+      },
+      "subcommands": []
+    },
     "claude plugins tag": {
       "flags": {
         "--dry-run": {
@@ -1035,6 +1153,9 @@
         "--keep-data": {
           "type": "bool"
         },
+        "--prune": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "short": "-s",
@@ -1043,6 +1164,10 @@
             "project",
             "local"
           ]
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
         }
       },
       "subcommands": []
@@ -1056,6 +1181,9 @@
         "--keep-data": {
           "type": "bool"
         },
+        "--prune": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "short": "-s",
@@ -1064,6 +1192,10 @@
             "project",
             "local"
           ]
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
         }
       },
       "subcommands": []
