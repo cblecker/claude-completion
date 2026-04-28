@@ -36,9 +36,14 @@ jobs:
           echo "current=$CURRENT_VERSION" >> "$GITHUB_OUTPUT"
           echo "latest=$LATEST_VERSION" >> "$GITHUB_OUTPUT"
           if [ "$CURRENT_VERSION" = "$LATEST_VERSION" ]; then
+            echo "No version change"
             echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
+          elif npx --yes semver "$LATEST_VERSION" -r ">$CURRENT_VERSION" > /dev/null 2>&1; then
+            echo "New version available: $LATEST_VERSION (current: $CURRENT_VERSION)"
             echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Latest version $LATEST_VERSION is not newer than current $CURRENT_VERSION, skipping"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Check for existing PR
