@@ -1,5 +1,5 @@
 {
-  "version": "2.1.123",
+  "version": "2.1.126",
   "commands": {
     "claude": {
       "flags": {
@@ -221,6 +221,7 @@
         "mcp",
         "plugin",
         "plugins",
+        "project",
         "setup-token",
         "ultrareview",
         "update",
@@ -1224,6 +1225,40 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude project": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": [
+        "purge"
+      ]
+    },
+    "claude project purge": {
+      "flags": {
+        "--all": {
+          "type": "bool"
+        },
+        "--dry-run": {
+          "type": "bool"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--interactive": {
+          "type": "bool",
+          "short": "-i"
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
         }
       },
       "subcommands": []
