@@ -1,5 +1,5 @@
 {
-  "version": "2.1.128",
+  "version": "2.1.129",
   "commands": {
     "claude": {
       "flags": {
@@ -158,6 +158,9 @@
         },
         "--plugin-dir": {
           "type": "dir"
+        },
+        "--plugin-url": {
+          "type": "value"
         },
         "--print": {
           "type": "bool",
