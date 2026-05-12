@@ -1,5 +1,5 @@
 {
-  "version": "2.1.138",
+  "version": "2.1.139",
   "commands": {
     "claude": {
       "flags": {
@@ -545,6 +545,7 @@
         }
       },
       "subcommands": [
+        "details",
         "disable",
         "enable",
         "install",
@@ -559,6 +560,15 @@
         "update",
         "validate"
       ]
+    },
+    "claude plugin details": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
     },
     "claude plugin disable": {
       "flags": {
@@ -894,6 +904,7 @@
         }
       },
       "subcommands": [
+        "details",
         "disable",
         "enable",
         "install",
@@ -908,6 +919,15 @@
         "update",
         "validate"
       ]
+    },
+    "claude plugins details": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
     },
     "claude plugins disable": {
       "flags": {
