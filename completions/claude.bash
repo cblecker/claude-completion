@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.138
+# Generated from Claude Code v2.1.139
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -66,6 +66,7 @@ _comp_cmd_claude__has_command()
         "claude mcp serve") return 0 ;;
         "claude plugin") return 0 ;;
         "claude plugin autoremove") return 0 ;;
+        "claude plugin details") return 0 ;;
         "claude plugin disable") return 0 ;;
         "claude plugin enable") return 0 ;;
         "claude plugin i") return 0 ;;
@@ -85,6 +86,7 @@ _comp_cmd_claude__has_command()
         "claude plugin validate") return 0 ;;
         "claude plugins") return 0 ;;
         "claude plugins autoremove") return 0 ;;
+        "claude plugins details") return 0 ;;
         "claude plugins disable") return 0 ;;
         "claude plugins enable") return 0 ;;
         "claude plugins i") return 0 ;;
@@ -206,11 +208,14 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "autoremove disable enable i install list marketplace prune remove tag uninstall update validate"
+                _comp_compgen -- -W "autoremove details disable enable i install list marketplace prune remove tag uninstall update validate"
             fi
             ;;
         "claude plugin autoremove")
             _comp_compgen -- -W "--dry-run --help --scope --yes -h -s -y"
+            ;;
+        "claude plugin details")
+            _comp_compgen -- -W "--help -h"
             ;;
         "claude plugin disable")
             _comp_compgen -- -W "--all --help --scope -a -h -s"
@@ -271,11 +276,14 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "autoremove disable enable i install list marketplace prune remove tag uninstall update validate"
+                _comp_compgen -- -W "autoremove details disable enable i install list marketplace prune remove tag uninstall update validate"
             fi
             ;;
         "claude plugins autoremove")
             _comp_compgen -- -W "--dry-run --help --scope --yes -h -s -y"
+            ;;
+        "claude plugins details")
+            _comp_compgen -- -W "--help -h"
             ;;
         "claude plugins disable")
             _comp_compgen -- -W "--all --help --scope -a -h -s"
