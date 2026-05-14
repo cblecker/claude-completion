@@ -1,5 +1,5 @@
 {
-  "version": "2.1.140",
+  "version": "2.1.141",
   "commands": {
     "claude": {
       "flags": {
@@ -236,6 +236,9 @@
     },
     "claude agents": {
       "flags": {
+        "--cwd": {
+          "type": "file"
+        },
         "--help": {
           "type": "bool",
           "short": "-h"

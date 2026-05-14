@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.140
+# Generated from Claude Code v2.1.141
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -133,7 +133,7 @@ _comp_cmd_claude__complete()
             fi
             ;;
         "claude agents")
-            _comp_compgen -- -W "--help --setting-sources -h"
+            _comp_compgen -- -W "--cwd --help --setting-sources -h"
             ;;
         "claude auth")
             if [[ "$cur" == -* ]]; then
@@ -470,6 +470,10 @@ _comp_cmd_claude__flag_values()
             ;;
         "claude agents")
             case "$prev" in
+                --cwd)
+                    _comp_compgen_filedir
+                    return 0
+                    ;;
                 --setting-sources)
                     _comp_compgen -- -W "user project local"
                     return 0
