@@ -1,5 +1,5 @@
 {
-  "version": "2.1.141",
+  "version": "2.1.142",
   "commands": {
     "claude": {
       "flags": {
@@ -239,9 +239,21 @@
         "--cwd": {
           "type": "file"
         },
+        "--dangerously-skip-permissions": {
+          "type": "bool"
+        },
+        "--effort": {
+          "type": "value"
+        },
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--model": {
+          "type": "value"
+        },
+        "--permission-mode": {
+          "type": "value"
         },
         "--setting-sources": {
           "type": "choices",
