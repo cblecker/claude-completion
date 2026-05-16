@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.142
+# Generated from Claude Code v2.1.143
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -133,7 +133,7 @@ _comp_cmd_claude__complete()
             fi
             ;;
         "claude agents")
-            _comp_compgen -- -W "--cwd --dangerously-skip-permissions --effort --help --model --permission-mode --setting-sources -h"
+            _comp_compgen -- -W "--add-dir --allow-dangerously-skip-permissions --cwd --dangerously-skip-permissions --effort --help --mcp-config --model --permission-mode --plugin-dir --setting-sources --settings --strict-mcp-config -h"
             ;;
         "claude auth")
             if [[ "$cur" == -* ]]; then
@@ -470,11 +470,18 @@ _comp_cmd_claude__flag_values()
             ;;
         "claude agents")
             case "$prev" in
+                --add-dir)
+                    _comp_compgen_filedir -d
+                    return 0
+                    ;;
                 --cwd)
                     _comp_compgen_filedir
                     return 0
                     ;;
                 --effort)
+                    return 0
+                    ;;
+                --mcp-config)
                     return 0
                     ;;
                 --model)
@@ -483,8 +490,16 @@ _comp_cmd_claude__flag_values()
                 --permission-mode)
                     return 0
                     ;;
+                --plugin-dir)
+                    _comp_compgen_filedir -d
+                    return 0
+                    ;;
                 --setting-sources)
                     _comp_compgen -- -W "user project local"
+                    return 0
+                    ;;
+                --settings)
+                    _comp_compgen_filedir
                     return 0
                     ;;
             esac
