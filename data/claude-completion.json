@@ -1,5 +1,5 @@
 {
-  "version": "2.1.142",
+  "version": "2.1.143",
   "commands": {
     "claude": {
       "flags": {
@@ -236,6 +236,12 @@
     },
     "claude agents": {
       "flags": {
+        "--add-dir": {
+          "type": "dir"
+        },
+        "--allow-dangerously-skip-permissions": {
+          "type": "bool"
+        },
         "--cwd": {
           "type": "file"
         },
@@ -249,11 +255,17 @@
           "type": "bool",
           "short": "-h"
         },
+        "--mcp-config": {
+          "type": "value"
+        },
         "--model": {
           "type": "value"
         },
         "--permission-mode": {
           "type": "value"
+        },
+        "--plugin-dir": {
+          "type": "dir"
         },
         "--setting-sources": {
           "type": "choices",
@@ -262,6 +274,12 @@
             "project",
             "local"
           ]
+        },
+        "--settings": {
+          "type": "file"
+        },
+        "--strict-mcp-config": {
+          "type": "bool"
         }
       },
       "subcommands": []
