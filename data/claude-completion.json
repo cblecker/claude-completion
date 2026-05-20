@@ -1,5 +1,5 @@
 {
-  "version": "2.1.144",
+  "version": "2.1.145",
   "commands": {
     "claude": {
       "flags": {
@@ -254,6 +254,9 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
         },
         "--mcp-config": {
           "type": "value"
@@ -925,6 +928,9 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--strict": {
+          "type": "bool"
         }
       },
       "subcommands": []
@@ -1284,6 +1290,9 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--strict": {
+          "type": "bool"
         }
       },
       "subcommands": []

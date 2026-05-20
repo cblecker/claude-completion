@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.144
+# Generated from Claude Code v2.1.145
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -133,7 +133,7 @@ _comp_cmd_claude__complete()
             fi
             ;;
         "claude agents")
-            _comp_compgen -- -W "--add-dir --allow-dangerously-skip-permissions --cwd --dangerously-skip-permissions --effort --help --mcp-config --model --permission-mode --plugin-dir --setting-sources --settings --strict-mcp-config -h"
+            _comp_compgen -- -W "--add-dir --allow-dangerously-skip-permissions --cwd --dangerously-skip-permissions --effort --help --json --mcp-config --model --permission-mode --plugin-dir --setting-sources --settings --strict-mcp-config -h"
             ;;
         "claude auth")
             if [[ "$cur" == -* ]]; then
@@ -270,7 +270,7 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--help --scope -h -s"
             ;;
         "claude plugin validate")
-            _comp_compgen -- -W "--help -h"
+            _comp_compgen -- -W "--help --strict -h"
             ;;
         "claude plugins")
             if [[ "$cur" == -* ]]; then
@@ -338,7 +338,7 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--help --scope -h -s"
             ;;
         "claude plugins validate")
-            _comp_compgen -- -W "--help -h"
+            _comp_compgen -- -W "--help --strict -h"
             ;;
         "claude project")
             if [[ "$cur" == -* ]]; then
