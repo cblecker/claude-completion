@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.146
+# Generated from Claude Code v2.1.147
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -224,10 +224,10 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--help --scope -h -s"
             ;;
         "claude plugin i")
-            _comp_compgen -- -W "--help --scope -h -s"
+            _comp_compgen -- -W "--config --help --scope -h -s"
             ;;
         "claude plugin install")
-            _comp_compgen -- -W "--help --scope -h -s"
+            _comp_compgen -- -W "--config --help --scope -h -s"
             ;;
         "claude plugin list")
             _comp_compgen -- -W "--available --help --json -h"
@@ -292,10 +292,10 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--help --scope -h -s"
             ;;
         "claude plugins i")
-            _comp_compgen -- -W "--help --scope -h -s"
+            _comp_compgen -- -W "--config --help --scope -h -s"
             ;;
         "claude plugins install")
-            _comp_compgen -- -W "--help --scope -h -s"
+            _comp_compgen -- -W "--config --help --scope -h -s"
             ;;
         "claude plugins list")
             _comp_compgen -- -W "--available --help --json -h"
@@ -592,6 +592,9 @@ _comp_cmd_claude__flag_values()
             ;;
         "claude plugin i")
             case "$prev" in
+                --config)
+                    return 0
+                    ;;
                 --scope|-s)
                     _comp_compgen -- -W "user project local"
                     return 0
@@ -600,6 +603,9 @@ _comp_cmd_claude__flag_values()
             ;;
         "claude plugin install")
             case "$prev" in
+                --config)
+                    return 0
+                    ;;
                 --scope|-s)
                     _comp_compgen -- -W "user project local"
                     return 0
@@ -686,6 +692,9 @@ _comp_cmd_claude__flag_values()
             ;;
         "claude plugins i")
             case "$prev" in
+                --config)
+                    return 0
+                    ;;
                 --scope|-s)
                     _comp_compgen -- -W "user project local"
                     return 0
@@ -694,6 +703,9 @@ _comp_cmd_claude__flag_values()
             ;;
         "claude plugins install")
             case "$prev" in
+                --config)
+                    return 0
+                    ;;
                 --scope|-s)
                     _comp_compgen -- -W "user project local"
                     return 0

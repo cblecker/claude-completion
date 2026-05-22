@@ -1,5 +1,5 @@
 {
-  "version": "2.1.146",
+  "version": "2.1.147",
   "commands": {
     "claude": {
       "flags": {
@@ -648,6 +648,9 @@
     },
     "claude plugin install": {
       "flags": {
+        "--config": {
+          "type": "value"
+        },
         "--help": {
           "type": "bool",
           "short": "-h"
@@ -666,6 +669,9 @@
     },
     "claude plugin i": {
       "flags": {
+        "--config": {
+          "type": "value"
+        },
         "--help": {
           "type": "bool",
           "short": "-h"
@@ -1010,6 +1016,9 @@
     },
     "claude plugins install": {
       "flags": {
+        "--config": {
+          "type": "value"
+        },
         "--help": {
           "type": "bool",
           "short": "-h"
@@ -1028,6 +1037,9 @@
     },
     "claude plugins i": {
       "flags": {
+        "--config": {
+          "type": "value"
+        },
         "--help": {
           "type": "bool",
           "short": "-h"
