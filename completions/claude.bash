@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.150
+# Generated from Claude Code v2.1.152
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -246,10 +246,10 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--help --json -h"
             ;;
         "claude plugin marketplace remove")
-            _comp_compgen -- -W "--help -h"
+            _comp_compgen -- -W "--help --scope -h"
             ;;
         "claude plugin marketplace rm")
-            _comp_compgen -- -W "--help -h"
+            _comp_compgen -- -W "--help --scope -h"
             ;;
         "claude plugin marketplace update")
             _comp_compgen -- -W "--help -h"
@@ -314,10 +314,10 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--help --json -h"
             ;;
         "claude plugins marketplace remove")
-            _comp_compgen -- -W "--help -h"
+            _comp_compgen -- -W "--help --scope -h"
             ;;
         "claude plugins marketplace rm")
-            _comp_compgen -- -W "--help -h"
+            _comp_compgen -- -W "--help --scope -h"
             ;;
         "claude plugins marketplace update")
             _comp_compgen -- -W "--help -h"
@@ -624,6 +624,22 @@ _comp_cmd_claude__flag_values()
                     ;;
             esac
             ;;
+        "claude plugin marketplace remove")
+            case "$prev" in
+                --scope)
+                    _comp_compgen -- -W "user project or"
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugin marketplace rm")
+            case "$prev" in
+                --scope)
+                    _comp_compgen -- -W "user project or"
+                    return 0
+                    ;;
+            esac
+            ;;
         "claude plugin prune")
             case "$prev" in
                 --scope|-s)
@@ -720,6 +736,22 @@ _comp_cmd_claude__flag_values()
                     ;;
                 --sparse)
                     _comp_compgen_filedir
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins marketplace remove")
+            case "$prev" in
+                --scope)
+                    _comp_compgen -- -W "user project or"
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins marketplace rm")
+            case "$prev" in
+                --scope)
+                    _comp_compgen -- -W "user project or"
                     return 0
                     ;;
             esac
