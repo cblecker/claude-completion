@@ -1,5 +1,5 @@
 {
-  "version": "2.1.153",
+  "version": "2.1.154",
   "commands": {
     "claude": {
       "flags": {
@@ -146,6 +146,9 @@
         "--print": {
           "type": "bool",
           "short": "-p"
+        },
+        "--prompt-suggestions": {
+          "type": "optional_value"
         },
         "--remote-control": {
           "type": "optional_value"
