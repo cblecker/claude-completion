@@ -1,5 +1,5 @@
 {
-  "version": "2.1.152",
+  "version": "2.1.153",
   "commands": {
     "claude": {
       "flags": {
@@ -15,14 +15,6 @@
         },
         "--allow-dangerously-skip-permissions": {
           "type": "bool"
-        },
-        "--allowedTools": {
-          "type": "value",
-          "repeatable": true
-        },
-        "--allowed-tools": {
-          "type": "value",
-          "repeatable": true
         },
         "--append-system-prompt": {
           "type": "value"
@@ -57,14 +49,6 @@
         "--disable-slash-commands": {
           "type": "bool"
         },
-        "--disallowedTools": {
-          "type": "value",
-          "repeatable": true
-        },
-        "--disallowed-tools": {
-          "type": "value",
-          "repeatable": true
-        },
         "--effort": {
           "type": "choices",
           "choices": [
@@ -74,9 +58,6 @@
             "xhigh",
             "max"
           ]
-        },
-        "--exclude-dynamic-system-prompt-sections": {
-          "type": "bool"
         },
         "--fallback-model": {
           "type": "value"
@@ -168,9 +149,6 @@
         },
         "--remote-control": {
           "type": "optional_value"
-        },
-        "--remote-control-session-name-prefix": {
-          "type": "value"
         },
         "--replay-user-messages": {
           "type": "bool"

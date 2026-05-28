@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.152
+# Generated from Claude Code v2.1.153
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -127,7 +127,7 @@ _comp_cmd_claude__complete()
     case "$1" in
         "claude")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --allowed-tools --allowedTools --append-system-prompt --bare --betas --brief --chrome --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --disallowed-tools --disallowedTools --effort --exclude-dynamic-system-prompt-sections --fallback-model --file --fork-session --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --mcp-debug --model --name --no-chrome --no-session-persistence --output-format --permission-mode --plugin-dir --plugin-url --print --remote-control --remote-control-session-name-prefix --replay-user-messages --resume --session-id --setting-sources --settings --strict-mcp-config --system-prompt --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
+                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --append-system-prompt --bare --betas --brief --chrome --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --effort --fallback-model --file --fork-session --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --mcp-debug --model --name --no-chrome --no-session-persistence --output-format --permission-mode --plugin-dir --plugin-url --print --remote-control --replay-user-messages --resume --session-id --setting-sources --settings --strict-mcp-config --system-prompt --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
             else
                 _comp_compgen -- -W "agents auth auto-mode doctor install mcp plugin plugins project setup-token ultrareview update upgrade"
             fi
@@ -380,12 +380,6 @@ _comp_cmd_claude__flag_values()
                 --agents)
                     return 0
                     ;;
-                --allowed-tools)
-                    return 0
-                    ;;
-                --allowedTools)
-                    return 0
-                    ;;
                 --append-system-prompt)
                     return 0
                     ;;
@@ -394,12 +388,6 @@ _comp_cmd_claude__flag_values()
                     ;;
                 --debug-file)
                     _comp_compgen_filedir
-                    return 0
-                    ;;
-                --disallowed-tools)
-                    return 0
-                    ;;
-                --disallowedTools)
                     return 0
                     ;;
                 --effort)
@@ -444,9 +432,6 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --plugin-url)
-                    return 0
-                    ;;
-                --remote-control-session-name-prefix)
                     return 0
                     ;;
                 --session-id)
