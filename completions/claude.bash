@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.156
+# Generated from Claude Code v2.1.157
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -70,6 +70,7 @@ _comp_cmd_claude__has_command()
         "claude plugin disable") return 0 ;;
         "claude plugin enable") return 0 ;;
         "claude plugin i") return 0 ;;
+        "claude plugin init") return 0 ;;
         "claude plugin install") return 0 ;;
         "claude plugin list") return 0 ;;
         "claude plugin marketplace") return 0 ;;
@@ -78,6 +79,7 @@ _comp_cmd_claude__has_command()
         "claude plugin marketplace remove") return 0 ;;
         "claude plugin marketplace rm") return 0 ;;
         "claude plugin marketplace update") return 0 ;;
+        "claude plugin new") return 0 ;;
         "claude plugin prune") return 0 ;;
         "claude plugin remove") return 0 ;;
         "claude plugin tag") return 0 ;;
@@ -90,6 +92,7 @@ _comp_cmd_claude__has_command()
         "claude plugins disable") return 0 ;;
         "claude plugins enable") return 0 ;;
         "claude plugins i") return 0 ;;
+        "claude plugins init") return 0 ;;
         "claude plugins install") return 0 ;;
         "claude plugins list") return 0 ;;
         "claude plugins marketplace") return 0 ;;
@@ -98,6 +101,7 @@ _comp_cmd_claude__has_command()
         "claude plugins marketplace remove") return 0 ;;
         "claude plugins marketplace rm") return 0 ;;
         "claude plugins marketplace update") return 0 ;;
+        "claude plugins new") return 0 ;;
         "claude plugins prune") return 0 ;;
         "claude plugins remove") return 0 ;;
         "claude plugins tag") return 0 ;;
@@ -133,7 +137,7 @@ _comp_cmd_claude__complete()
             fi
             ;;
         "claude agents")
-            _comp_compgen -- -W "--add-dir --allow-dangerously-skip-permissions --cwd --dangerously-skip-permissions --effort --help --json --mcp-config --model --permission-mode --plugin-dir --setting-sources --settings --strict-mcp-config -h"
+            _comp_compgen -- -W "--add-dir --agent --allow-dangerously-skip-permissions --cwd --dangerously-skip-permissions --effort --help --json --mcp-config --model --permission-mode --plugin-dir --setting-sources --settings --strict-mcp-config -h"
             ;;
         "claude auth")
             if [[ "$cur" == -* ]]; then
@@ -208,7 +212,7 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "autoremove details disable enable i install list marketplace prune remove tag uninstall update validate"
+                _comp_compgen -- -W "autoremove details disable enable i init install list marketplace new prune remove tag uninstall update validate"
             fi
             ;;
         "claude plugin autoremove")
@@ -225,6 +229,9 @@ _comp_cmd_claude__complete()
             ;;
         "claude plugin i")
             _comp_compgen -- -W "--config --help --scope -h -s"
+            ;;
+        "claude plugin init")
+            _comp_compgen -- -W "--author --author-email --description --force --help --with -f -h"
             ;;
         "claude plugin install")
             _comp_compgen -- -W "--config --help --scope -h -s"
@@ -254,6 +261,9 @@ _comp_cmd_claude__complete()
         "claude plugin marketplace update")
             _comp_compgen -- -W "--help -h"
             ;;
+        "claude plugin new")
+            _comp_compgen -- -W "--author --author-email --description --force --help --with -f -h"
+            ;;
         "claude plugin prune")
             _comp_compgen -- -W "--dry-run --help --scope --yes -h -s -y"
             ;;
@@ -276,7 +286,7 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "autoremove details disable enable i install list marketplace prune remove tag uninstall update validate"
+                _comp_compgen -- -W "autoremove details disable enable i init install list marketplace new prune remove tag uninstall update validate"
             fi
             ;;
         "claude plugins autoremove")
@@ -293,6 +303,9 @@ _comp_cmd_claude__complete()
             ;;
         "claude plugins i")
             _comp_compgen -- -W "--config --help --scope -h -s"
+            ;;
+        "claude plugins init")
+            _comp_compgen -- -W "--author --author-email --description --force --help --with -f -h"
             ;;
         "claude plugins install")
             _comp_compgen -- -W "--config --help --scope -h -s"
@@ -321,6 +334,9 @@ _comp_cmd_claude__complete()
             ;;
         "claude plugins marketplace update")
             _comp_compgen -- -W "--help -h"
+            ;;
+        "claude plugins new")
+            _comp_compgen -- -W "--author --author-email --description --force --help --with -f -h"
             ;;
         "claude plugins prune")
             _comp_compgen -- -W "--dry-run --help --scope --yes -h -s -y"
@@ -459,6 +475,9 @@ _comp_cmd_claude__flag_values()
                     _comp_compgen_filedir -d
                     return 0
                     ;;
+                --agent)
+                    return 0
+                    ;;
                 --cwd)
                     _comp_compgen_filedir
                     return 0
@@ -586,6 +605,23 @@ _comp_cmd_claude__flag_values()
                     ;;
             esac
             ;;
+        "claude plugin init")
+            case "$prev" in
+                --author)
+                    return 0
+                    ;;
+                --author-email)
+                    return 0
+                    ;;
+                --description)
+                    return 0
+                    ;;
+                --with)
+                    _comp_compgen -- -W "skills agents hooks mcp lsp output-style channel"
+                    return 0
+                    ;;
+            esac
+            ;;
         "claude plugin install")
             case "$prev" in
                 --config)
@@ -621,6 +657,23 @@ _comp_cmd_claude__flag_values()
             case "$prev" in
                 --scope)
                     _comp_compgen -- -W "user project or"
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugin new")
+            case "$prev" in
+                --author)
+                    return 0
+                    ;;
+                --author-email)
+                    return 0
+                    ;;
+                --description)
+                    return 0
+                    ;;
+                --with)
+                    _comp_compgen -- -W "skills agents hooks mcp lsp output-style channel"
                     return 0
                     ;;
             esac
@@ -702,6 +755,23 @@ _comp_cmd_claude__flag_values()
                     ;;
             esac
             ;;
+        "claude plugins init")
+            case "$prev" in
+                --author)
+                    return 0
+                    ;;
+                --author-email)
+                    return 0
+                    ;;
+                --description)
+                    return 0
+                    ;;
+                --with)
+                    _comp_compgen -- -W "skills agents hooks mcp lsp output-style channel"
+                    return 0
+                    ;;
+            esac
+            ;;
         "claude plugins install")
             case "$prev" in
                 --config)
@@ -737,6 +807,23 @@ _comp_cmd_claude__flag_values()
             case "$prev" in
                 --scope)
                     _comp_compgen -- -W "user project or"
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins new")
+            case "$prev" in
+                --author)
+                    return 0
+                    ;;
+                --author-email)
+                    return 0
+                    ;;
+                --description)
+                    return 0
+                    ;;
+                --with)
+                    _comp_compgen -- -W "skills agents hooks mcp lsp output-style channel"
                     return 0
                     ;;
             esac
