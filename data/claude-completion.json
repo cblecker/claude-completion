@@ -1,5 +1,5 @@
 {
-  "version": "2.1.156",
+  "version": "2.1.157",
   "commands": {
     "claude": {
       "flags": {
@@ -219,6 +219,9 @@
       "flags": {
         "--add-dir": {
           "type": "dir"
+        },
+        "--agent": {
+          "type": "value"
         },
         "--allow-dangerously-skip-permissions": {
           "type": "bool"
@@ -565,6 +568,8 @@
         "details",
         "disable",
         "enable",
+        "init",
+        "new",
         "install",
         "i",
         "list",
@@ -623,6 +628,76 @@
             "project",
             "local"
           ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin init": {
+      "flags": {
+        "--author": {
+          "type": "value"
+        },
+        "--author-email": {
+          "type": "value"
+        },
+        "--description": {
+          "type": "value"
+        },
+        "--force": {
+          "type": "bool",
+          "short": "-f"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--with": {
+          "type": "choices",
+          "choices": [
+            "skills",
+            "agents",
+            "hooks",
+            "mcp",
+            "lsp",
+            "output-style",
+            "channel"
+          ],
+          "repeatable": true
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin new": {
+      "flags": {
+        "--author": {
+          "type": "value"
+        },
+        "--author-email": {
+          "type": "value"
+        },
+        "--description": {
+          "type": "value"
+        },
+        "--force": {
+          "type": "bool",
+          "short": "-f"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--with": {
+          "type": "choices",
+          "choices": [
+            "skills",
+            "agents",
+            "hooks",
+            "mcp",
+            "lsp",
+            "output-style",
+            "channel"
+          ],
+          "repeatable": true
         }
       },
       "subcommands": []
@@ -949,6 +1024,8 @@
         "details",
         "disable",
         "enable",
+        "init",
+        "new",
         "install",
         "i",
         "list",
@@ -1007,6 +1084,76 @@
             "project",
             "local"
           ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins init": {
+      "flags": {
+        "--author": {
+          "type": "value"
+        },
+        "--author-email": {
+          "type": "value"
+        },
+        "--description": {
+          "type": "value"
+        },
+        "--force": {
+          "type": "bool",
+          "short": "-f"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--with": {
+          "type": "choices",
+          "choices": [
+            "skills",
+            "agents",
+            "hooks",
+            "mcp",
+            "lsp",
+            "output-style",
+            "channel"
+          ],
+          "repeatable": true
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins new": {
+      "flags": {
+        "--author": {
+          "type": "value"
+        },
+        "--author-email": {
+          "type": "value"
+        },
+        "--description": {
+          "type": "value"
+        },
+        "--force": {
+          "type": "bool",
+          "short": "-f"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--with": {
+          "type": "choices",
+          "choices": [
+            "skills",
+            "agents",
+            "hooks",
+            "mcp",
+            "lsp",
+            "output-style",
+            "channel"
+          ],
+          "repeatable": true
         }
       },
       "subcommands": []
