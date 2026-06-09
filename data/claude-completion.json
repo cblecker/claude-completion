@@ -1,5 +1,5 @@
 {
-  "version": "2.1.168",
+  "version": "2.1.169",
   "commands": {
     "claude": {
       "flags": {
@@ -160,6 +160,9 @@
           "type": "optional_value",
           "short": "-r"
         },
+        "--safe-mode": {
+          "type": "bool"
+        },
         "--session-id": {
           "type": "value"
         },
@@ -222,6 +225,9 @@
         },
         "--agent": {
           "type": "value"
+        },
+        "--all": {
+          "type": "bool"
         },
         "--allow-dangerously-skip-permissions": {
           "type": "bool"
