@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.185
+# Generated from Claude Code v2.1.186
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -61,6 +61,8 @@ _comp_cmd_claude__has_command()
         "claude mcp add-json") return 0 ;;
         "claude mcp get") return 0 ;;
         "claude mcp list") return 0 ;;
+        "claude mcp login") return 0 ;;
+        "claude mcp logout") return 0 ;;
         "claude mcp remove") return 0 ;;
         "claude mcp reset-project-choices") return 0 ;;
         "claude mcp serve") return 0 ;;
@@ -181,7 +183,7 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "add add-from-claude-desktop add-json get list remove reset-project-choices serve"
+                _comp_compgen -- -W "add add-from-claude-desktop add-json get list login logout remove reset-project-choices serve"
             fi
             ;;
         "claude mcp add")
@@ -197,6 +199,12 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--help -h"
             ;;
         "claude mcp list")
+            _comp_compgen -- -W "--help -h"
+            ;;
+        "claude mcp login")
+            _comp_compgen -- -W "--help --no-browser -h"
+            ;;
+        "claude mcp logout")
             _comp_compgen -- -W "--help -h"
             ;;
         "claude mcp remove")
