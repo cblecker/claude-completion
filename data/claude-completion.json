@@ -1,5 +1,5 @@
 {
-  "version": "2.1.185",
+  "version": "2.1.186",
   "commands": {
     "claude": {
       "flags": {
@@ -415,6 +415,8 @@
         "add-json",
         "get",
         "list",
+        "login",
+        "logout",
         "remove",
         "reset-project-choices",
         "serve"
@@ -515,6 +517,27 @@
       "subcommands": []
     },
     "claude mcp list": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude mcp login": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--no-browser": {
+          "type": "bool"
+        }
+      },
+      "subcommands": []
+    },
+    "claude mcp logout": {
       "flags": {
         "--help": {
           "type": "bool",
