@@ -1,5 +1,5 @@
 {
-  "version": "2.1.186",
+  "version": "2.1.187",
   "commands": {
     "claude": {
       "flags": {
@@ -20,6 +20,12 @@
           "type": "value"
         },
         "--ax-screen-reader": {
+          "type": "bool"
+        },
+        "--bg": {
+          "type": "bool"
+        },
+        "--background": {
           "type": "bool"
         },
         "--bare": {
