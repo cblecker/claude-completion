@@ -1,5 +1,5 @@
 {
-  "version": "2.1.191",
+  "version": "2.1.193",
   "commands": {
     "claude": {
       "flags": {
@@ -110,9 +110,6 @@
         "--mcp-config": {
           "type": "value",
           "repeatable": true
-        },
-        "--mcp-debug": {
-          "type": "bool"
         },
         "--model": {
           "type": "value"
