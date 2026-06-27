@@ -1,5 +1,5 @@
 {
-  "version": "2.1.193",
+  "version": "2.1.195",
   "commands": {
     "claude": {
       "flags": {
@@ -213,6 +213,7 @@
         "auth",
         "auto-mode",
         "doctor",
+        "gateway",
         "install",
         "mcp",
         "plugin",
@@ -386,6 +387,18 @@
     },
     "claude doctor": {
       "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude gateway": {
+      "flags": {
+        "--config": {
+          "type": "file"
+        },
         "--help": {
           "type": "bool",
           "short": "-h"
