@@ -1,5 +1,5 @@
 {
-  "version": "2.1.197",
+  "version": "2.1.198",
   "commands": {
     "claude": {
       "flags": {
@@ -616,6 +616,7 @@
         "details",
         "disable",
         "enable",
+        "eval",
         "init",
         "new",
         "install",
@@ -676,6 +677,76 @@
             "project",
             "local"
           ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugin eval": {
+      "flags": {
+        "--ablation": {
+          "type": "value"
+        },
+        "--allow-tools": {
+          "type": "value",
+          "repeatable": true
+        },
+        "--case": {
+          "type": "value"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
+        },
+        "--judge-model": {
+          "type": "value"
+        },
+        "--keep-temp": {
+          "type": "bool"
+        },
+        "--max-cost-usd": {
+          "type": "value"
+        },
+        "--model": {
+          "type": "value"
+        },
+        "--no-scaffold": {
+          "type": "bool"
+        },
+        "--output-dir": {
+          "type": "dir"
+        },
+        "--runs": {
+          "type": "value"
+        },
+        "--scaffold": {
+          "type": "bool"
+        },
+        "--tag": {
+          "type": "value",
+          "repeatable": true
+        },
+        "--threshold": {
+          "type": "value"
+        },
+        "--verbose": {
+          "type": "bool"
+        }
+      },
+      "subcommands": [
+        "init"
+      ]
+    },
+    "claude plugin eval init": {
+      "flags": {
+        "--bare": {
+          "type": "bool"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
         }
       },
       "subcommands": []
@@ -1072,6 +1143,7 @@
         "details",
         "disable",
         "enable",
+        "eval",
         "init",
         "new",
         "install",
@@ -1132,6 +1204,76 @@
             "project",
             "local"
           ]
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins eval": {
+      "flags": {
+        "--ablation": {
+          "type": "value"
+        },
+        "--allow-tools": {
+          "type": "value",
+          "repeatable": true
+        },
+        "--case": {
+          "type": "value"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
+        },
+        "--judge-model": {
+          "type": "value"
+        },
+        "--keep-temp": {
+          "type": "bool"
+        },
+        "--max-cost-usd": {
+          "type": "value"
+        },
+        "--model": {
+          "type": "value"
+        },
+        "--no-scaffold": {
+          "type": "bool"
+        },
+        "--output-dir": {
+          "type": "dir"
+        },
+        "--runs": {
+          "type": "value"
+        },
+        "--scaffold": {
+          "type": "bool"
+        },
+        "--tag": {
+          "type": "value",
+          "repeatable": true
+        },
+        "--threshold": {
+          "type": "value"
+        },
+        "--verbose": {
+          "type": "bool"
+        }
+      },
+      "subcommands": [
+        "init"
+      ]
+    },
+    "claude plugins eval init": {
+      "flags": {
+        "--bare": {
+          "type": "bool"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
         }
       },
       "subcommands": []
