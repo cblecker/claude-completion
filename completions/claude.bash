@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.197
+# Generated from Claude Code v2.1.198
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -72,6 +72,8 @@ _comp_cmd_claude__has_command()
         "claude plugin details") return 0 ;;
         "claude plugin disable") return 0 ;;
         "claude plugin enable") return 0 ;;
+        "claude plugin eval") return 0 ;;
+        "claude plugin eval init") return 0 ;;
         "claude plugin i") return 0 ;;
         "claude plugin init") return 0 ;;
         "claude plugin install") return 0 ;;
@@ -94,6 +96,8 @@ _comp_cmd_claude__has_command()
         "claude plugins details") return 0 ;;
         "claude plugins disable") return 0 ;;
         "claude plugins enable") return 0 ;;
+        "claude plugins eval") return 0 ;;
+        "claude plugins eval init") return 0 ;;
         "claude plugins i") return 0 ;;
         "claude plugins init") return 0 ;;
         "claude plugins install") return 0 ;;
@@ -224,7 +228,7 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "autoremove details disable enable i init install list marketplace new prune remove tag uninstall update validate"
+                _comp_compgen -- -W "autoremove details disable enable eval i init install list marketplace new prune remove tag uninstall update validate"
             fi
             ;;
         "claude plugin autoremove")
@@ -238,6 +242,16 @@ _comp_cmd_claude__complete()
             ;;
         "claude plugin enable")
             _comp_compgen -- -W "--help --scope -h -s"
+            ;;
+        "claude plugin eval")
+            if [[ "$cur" == -* ]]; then
+                _comp_compgen -- -W "--ablation --allow-tools --case --help --json --judge-model --keep-temp --max-cost-usd --model --no-scaffold --output-dir --runs --scaffold --tag --threshold --verbose -h"
+            else
+                _comp_compgen -- -W "init"
+            fi
+            ;;
+        "claude plugin eval init")
+            _comp_compgen -- -W "--bare --help -h"
             ;;
         "claude plugin i")
             _comp_compgen -- -W "--config --help --scope -h -s"
@@ -298,7 +312,7 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "autoremove details disable enable i init install list marketplace new prune remove tag uninstall update validate"
+                _comp_compgen -- -W "autoremove details disable enable eval i init install list marketplace new prune remove tag uninstall update validate"
             fi
             ;;
         "claude plugins autoremove")
@@ -312,6 +326,16 @@ _comp_cmd_claude__complete()
             ;;
         "claude plugins enable")
             _comp_compgen -- -W "--help --scope -h -s"
+            ;;
+        "claude plugins eval")
+            if [[ "$cur" == -* ]]; then
+                _comp_compgen -- -W "--ablation --allow-tools --case --help --json --judge-model --keep-temp --max-cost-usd --model --no-scaffold --output-dir --runs --scaffold --tag --threshold --verbose -h"
+            else
+                _comp_compgen -- -W "init"
+            fi
+            ;;
+        "claude plugins eval init")
+            _comp_compgen -- -W "--bare --help -h"
             ;;
         "claude plugins i")
             _comp_compgen -- -W "--config --help --scope -h -s"
@@ -614,6 +638,41 @@ _comp_cmd_claude__flag_values()
                     ;;
             esac
             ;;
+        "claude plugin eval")
+            case "$prev" in
+                --ablation)
+                    return 0
+                    ;;
+                --allow-tools)
+                    return 0
+                    ;;
+                --case)
+                    return 0
+                    ;;
+                --judge-model)
+                    return 0
+                    ;;
+                --max-cost-usd)
+                    return 0
+                    ;;
+                --model)
+                    return 0
+                    ;;
+                --output-dir)
+                    _comp_compgen_filedir -d
+                    return 0
+                    ;;
+                --runs)
+                    return 0
+                    ;;
+                --tag)
+                    return 0
+                    ;;
+                --threshold)
+                    return 0
+                    ;;
+            esac
+            ;;
         "claude plugin i")
             case "$prev" in
                 --config)
@@ -760,6 +819,41 @@ _comp_cmd_claude__flag_values()
             case "$prev" in
                 --scope|-s)
                     _comp_compgen -- -W "user project local"
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins eval")
+            case "$prev" in
+                --ablation)
+                    return 0
+                    ;;
+                --allow-tools)
+                    return 0
+                    ;;
+                --case)
+                    return 0
+                    ;;
+                --judge-model)
+                    return 0
+                    ;;
+                --max-cost-usd)
+                    return 0
+                    ;;
+                --model)
+                    return 0
+                    ;;
+                --output-dir)
+                    _comp_compgen_filedir -d
+                    return 0
+                    ;;
+                --runs)
+                    return 0
+                    ;;
+                --tag)
+                    return 0
+                    ;;
+                --threshold)
                     return 0
                     ;;
             esac
