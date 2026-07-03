@@ -1,5 +1,5 @@
 {
-  "version": "2.1.199",
+  "version": "2.1.200",
   "commands": {
     "claude": {
       "flags": {
@@ -138,7 +138,7 @@
             "acceptEdits",
             "auto",
             "bypassPermissions",
-            "default",
+            "manual",
             "dontAsk",
             "plan"
           ]
