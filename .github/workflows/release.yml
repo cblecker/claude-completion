@@ -21,20 +21,59 @@ jobs:
 
       - name: Check if tag exists
         id: check-tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
         run: |
-          if gh release view "v${{ steps.version.outputs.version }}" > /dev/null 2>&1; then
+          if gh release view "v${VERSION}" > /dev/null 2>&1; then
             echo "exists=true" >> "$GITHUB_OUTPUT"
           else
             echo "exists=false" >> "$GITHUB_OUTPUT"
           fi
-        env:
-          GH_TOKEN: ${{ github.token }}
 
       - name: Create release
         if: steps.check-tag.outputs.exists == 'false'
-        run: |
-          gh release create "v${{ steps.version.outputs.version }}" \
-            --title "v${{ steps.version.outputs.version }}" \
-            --notes "Bash completion for Claude Code v${{ steps.version.outputs.version }}."
         env:
           GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          gh release create "v${VERSION}" \
+            --title "v${VERSION}" \
+            --notes "Bash completion for Claude Code v${VERSION}."
+
+      - name: Verify release
+        if: success() && steps.check-tag.outputs.exists == 'false'
+        id: verify-release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          if gh release view "v${VERSION}" > /dev/null 2>&1; then
+            echo "released=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::warning::Release v${VERSION} not found after creation"
+            echo "released=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Generate App Token
+        if: steps.verify-release.outputs.released == 'true'
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.AUTOMATION_APP_ID }}
+          private-key: ${{ secrets.AUTOMATION_APP_PRIVATE_KEY }}
+          repositories: homebrew-tap
+
+      - name: Notify homebrew-tap
+        if: steps.verify-release.outputs.released == 'true'
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          gh api \
+            --method POST \
+            /repos/cblecker/homebrew-tap/dispatches \
+            -f event_type=formula-update \
+            -f 'client_payload[formula]=claude-completion' \
+            -f "client_payload[tag]=v${VERSION}" \
+            -f "client_payload[version]=${VERSION}"
