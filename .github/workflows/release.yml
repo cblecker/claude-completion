@@ -75,5 +75,4 @@ jobs:
             /repos/cblecker/homebrew-tap/dispatches \
             -f event_type=formula-update \
             -f 'client_payload[formula]=claude-completion' \
-            -f "client_payload[tag]=v${VERSION}" \
-            -f "client_payload[version]=${VERSION}"
+            -f "client_payload[tag]=v${VERSION}"
