@@ -1,5 +1,5 @@
 {
-  "version": "2.1.207",
+  "version": "2.1.208",
   "commands": {
     "claude": {
       "flags": {
@@ -381,6 +381,9 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--label": {
+          "type": "value"
         }
       },
       "subcommands": []

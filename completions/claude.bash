@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.207
+# Generated from Claude Code v2.1.208
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -176,7 +176,7 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--help --model -h"
             ;;
         "claude auto-mode defaults")
-            _comp_compgen -- -W "--help -h"
+            _comp_compgen -- -W "--help --label -h"
             ;;
         "claude doctor")
             _comp_compgen -- -W "--help -h"
@@ -554,6 +554,13 @@ _comp_cmd_claude__flag_values()
         "claude auto-mode critique")
             case "$prev" in
                 --model)
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude auto-mode defaults")
+            case "$prev" in
+                --label)
                     return 0
                     ;;
             esac
