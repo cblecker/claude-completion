@@ -1,5 +1,5 @@
 {
-  "version": "2.1.209",
+  "version": "2.1.210",
   "commands": {
     "claude": {
       "flags": {
@@ -701,7 +701,7 @@
           "short": "-h"
         },
         "--json": {
-          "type": "bool"
+          "type": "optional_value"
         },
         "--judge-model": {
           "type": "value"
@@ -720,6 +720,12 @@
         },
         "--output-dir": {
           "type": "dir"
+        },
+        "--publish-report": {
+          "type": "bool"
+        },
+        "--report": {
+          "type": "file"
         },
         "--runs": {
           "type": "value"
@@ -1228,7 +1234,7 @@
           "short": "-h"
         },
         "--json": {
-          "type": "bool"
+          "type": "optional_value"
         },
         "--judge-model": {
           "type": "value"
@@ -1247,6 +1253,12 @@
         },
         "--output-dir": {
           "type": "dir"
+        },
+        "--publish-report": {
+          "type": "bool"
+        },
+        "--report": {
+          "type": "file"
         },
         "--runs": {
           "type": "value"

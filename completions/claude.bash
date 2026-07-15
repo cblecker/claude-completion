@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.209
+# Generated from Claude Code v2.1.210
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -245,7 +245,7 @@ _comp_cmd_claude__complete()
             ;;
         "claude plugin eval")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--ablation --allow-tools --case --help --json --judge-model --keep-temp --max-cost-usd --model --no-scaffold --output-dir --runs --scaffold --tag --threshold --verbose -h"
+                _comp_compgen -- -W "--ablation --allow-tools --case --help --json --judge-model --keep-temp --max-cost-usd --model --no-scaffold --output-dir --publish-report --report --runs --scaffold --tag --threshold --verbose -h"
             else
                 _comp_compgen -- -W "init"
             fi
@@ -329,7 +329,7 @@ _comp_cmd_claude__complete()
             ;;
         "claude plugins eval")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--ablation --allow-tools --case --help --json --judge-model --keep-temp --max-cost-usd --model --no-scaffold --output-dir --runs --scaffold --tag --threshold --verbose -h"
+                _comp_compgen -- -W "--ablation --allow-tools --case --help --json --judge-model --keep-temp --max-cost-usd --model --no-scaffold --output-dir --publish-report --report --runs --scaffold --tag --threshold --verbose -h"
             else
                 _comp_compgen -- -W "init"
             fi
@@ -669,6 +669,10 @@ _comp_cmd_claude__flag_values()
                     _comp_compgen_filedir -d
                     return 0
                     ;;
+                --report)
+                    _comp_compgen_filedir
+                    return 0
+                    ;;
                 --runs)
                     return 0
                     ;;
@@ -852,6 +856,10 @@ _comp_cmd_claude__flag_values()
                     ;;
                 --output-dir)
                     _comp_compgen_filedir -d
+                    return 0
+                    ;;
+                --report)
+                    _comp_compgen_filedir
                     return 0
                     ;;
                 --runs)
