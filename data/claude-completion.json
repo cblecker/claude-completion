@@ -1,5 +1,5 @@
 {
-  "version": "2.1.211",
+  "version": "2.1.212",
   "commands": {
     "claude": {
       "flags": {
@@ -355,7 +355,8 @@
       "subcommands": [
         "config",
         "critique",
-        "defaults"
+        "defaults",
+        "reset"
       ]
     },
     "claude auto-mode config": {
@@ -387,6 +388,19 @@
         },
         "--label": {
           "type": "value"
+        }
+      },
+      "subcommands": []
+    },
+    "claude auto-mode reset": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
         }
       },
       "subcommands": []
