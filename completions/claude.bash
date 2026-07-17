@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.211
+# Generated from Claude Code v2.1.212
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -53,6 +53,7 @@ _comp_cmd_claude__has_command()
         "claude auto-mode config") return 0 ;;
         "claude auto-mode critique") return 0 ;;
         "claude auto-mode defaults") return 0 ;;
+        "claude auto-mode reset") return 0 ;;
         "claude doctor") return 0 ;;
         "claude gateway") return 0 ;;
         "claude install") return 0 ;;
@@ -166,7 +167,7 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "config critique defaults"
+                _comp_compgen -- -W "config critique defaults reset"
             fi
             ;;
         "claude auto-mode config")
@@ -177,6 +178,9 @@ _comp_cmd_claude__complete()
             ;;
         "claude auto-mode defaults")
             _comp_compgen -- -W "--help --label -h"
+            ;;
+        "claude auto-mode reset")
+            _comp_compgen -- -W "--help --yes -h -y"
             ;;
         "claude doctor")
             _comp_compgen -- -W "--help -h"
