@@ -1,5 +1,5 @@
 {
-  "version": "2.1.219",
+  "version": "2.1.220",
   "commands": {
     "claude": {
       "flags": {
