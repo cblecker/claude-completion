@@ -1,5 +1,5 @@
 {
-  "version": "2.1.221",
+  "version": "2.1.222",
   "commands": {
     "claude": {
       "flags": {
@@ -220,6 +220,7 @@
         "auto-mode",
         "doctor",
         "gateway",
+        "import",
         "install",
         "mcp",
         "plugin",
@@ -425,6 +426,21 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
+    "claude import": {
+      "flags": {
+        "--dry-run": {
+          "type": "bool"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--yes": {
+          "type": "bool"
         }
       },
       "subcommands": []
