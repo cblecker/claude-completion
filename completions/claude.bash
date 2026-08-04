@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.221
+# Generated from Claude Code v2.1.222
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -56,6 +56,7 @@ _comp_cmd_claude__has_command()
         "claude auto-mode reset") return 0 ;;
         "claude doctor") return 0 ;;
         "claude gateway") return 0 ;;
+        "claude import") return 0 ;;
         "claude install") return 0 ;;
         "claude mcp") return 0 ;;
         "claude mcp add") return 0 ;;
@@ -141,7 +142,7 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --append-system-prompt --autocompact --ax-screen-reader --background --bare --betas --bg --brief --chrome --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --effort --fallback-model --file --fork-session --forward-subagent-text --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --model --name --no-chrome --no-session-persistence --output-format --permission-mode --plugin-dir --plugin-url --print --prompt-suggestions --remote-control --replay-user-messages --resume --safe-mode --session-id --setting-sources --settings --strict-mcp-config --system-prompt --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
             else
-                _comp_compgen -- -W "agents auth auto-mode doctor gateway install mcp plugin plugins project setup-token ultrareview update upgrade"
+                _comp_compgen -- -W "agents auth auto-mode doctor gateway import install mcp plugin plugins project setup-token ultrareview update upgrade"
             fi
             ;;
         "claude agents")
@@ -187,6 +188,9 @@ _comp_cmd_claude__complete()
             ;;
         "claude gateway")
             _comp_compgen -- -W "--config --help -h"
+            ;;
+        "claude import")
+            _comp_compgen -- -W "--dry-run --help --yes -h"
             ;;
         "claude install")
             _comp_compgen -- -W "--force --help -h"
