@@ -1,5 +1,5 @@
 {
-  "version": "2.1.220",
+  "version": "2.1.221",
   "commands": {
     "claude": {
       "flags": {
@@ -17,6 +17,9 @@
           "type": "bool"
         },
         "--append-system-prompt": {
+          "type": "value"
+        },
+        "--autocompact": {
           "type": "value"
         },
         "--ax-screen-reader": {
