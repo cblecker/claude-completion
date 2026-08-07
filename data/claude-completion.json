@@ -1,5 +1,5 @@
 {
-  "version": "2.1.223",
+  "version": "2.1.224",
   "commands": {
     "claude": {
       "flags": {
@@ -44,6 +44,9 @@
         "--chrome": {
           "type": "bool"
         },
+        "--cloud": {
+          "type": "optional_value"
+        },
         "--continue": {
           "type": "bool",
           "short": "-c"
@@ -70,6 +73,9 @@
             "xhigh",
             "max"
           ]
+        },
+        "--environment": {
+          "type": "value"
         },
         "--fallback-model": {
           "type": "value"
@@ -194,6 +200,9 @@
         },
         "--system-prompt": {
           "type": "value"
+        },
+        "--teleport": {
+          "type": "optional_value"
         },
         "--tmux": {
           "type": "bool"
@@ -751,6 +760,9 @@
         "--model": {
           "type": "value"
         },
+        "--no-publish": {
+          "type": "bool"
+        },
         "--no-scaffold": {
           "type": "bool"
         },
@@ -792,6 +804,10 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--interactive": {
+          "type": "bool",
+          "short": "-i"
         }
       },
       "subcommands": []
@@ -1284,6 +1300,9 @@
         "--model": {
           "type": "value"
         },
+        "--no-publish": {
+          "type": "bool"
+        },
         "--no-scaffold": {
           "type": "bool"
         },
@@ -1325,6 +1344,10 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--interactive": {
+          "type": "bool",
+          "short": "-i"
         }
       },
       "subcommands": []
