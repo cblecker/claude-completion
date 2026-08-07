@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.223
+# Generated from Claude Code v2.1.224
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -140,7 +140,7 @@ _comp_cmd_claude__complete()
     case "$1" in
         "claude")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --append-system-prompt --autocompact --ax-screen-reader --background --bare --betas --bg --brief --chrome --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --effort --fallback-model --file --fork-session --forward-subagent-text --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --model --name --no-chrome --no-session-persistence --output-format --permission-mode --plugin-dir --plugin-url --print --prompt-suggestions --remote-control --replay-user-messages --resume --safe-mode --session-id --setting-sources --settings --strict-mcp-config --system-prompt --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
+                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --append-system-prompt --autocompact --ax-screen-reader --background --bare --betas --bg --brief --chrome --cloud --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --effort --environment --fallback-model --file --fork-session --forward-subagent-text --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --model --name --no-chrome --no-session-persistence --output-format --permission-mode --plugin-dir --plugin-url --print --prompt-suggestions --remote-control --replay-user-messages --resume --safe-mode --session-id --setting-sources --settings --strict-mcp-config --system-prompt --teleport --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
             else
                 _comp_compgen -- -W "agents auth auto-mode doctor gateway import install mcp plugin plugins project setup-token ultrareview update upgrade"
             fi
@@ -253,13 +253,13 @@ _comp_cmd_claude__complete()
             ;;
         "claude plugin eval")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--ablation --allow-tools --case --help --json --judge-model --keep-temp --max-cost-usd --model --no-scaffold --output-dir --publish-report --report --runs --scaffold --tag --threshold --verbose -h"
+                _comp_compgen -- -W "--ablation --allow-tools --case --help --json --judge-model --keep-temp --max-cost-usd --model --no-publish --no-scaffold --output-dir --publish-report --report --runs --scaffold --tag --threshold --verbose -h"
             else
                 _comp_compgen -- -W "init"
             fi
             ;;
         "claude plugin eval init")
-            _comp_compgen -- -W "--bare --help -h"
+            _comp_compgen -- -W "--bare --help --interactive -h -i"
             ;;
         "claude plugin i")
             _comp_compgen -- -W "--config --help --scope -h -s"
@@ -337,13 +337,13 @@ _comp_cmd_claude__complete()
             ;;
         "claude plugins eval")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--ablation --allow-tools --case --help --json --judge-model --keep-temp --max-cost-usd --model --no-scaffold --output-dir --publish-report --report --runs --scaffold --tag --threshold --verbose -h"
+                _comp_compgen -- -W "--ablation --allow-tools --case --help --json --judge-model --keep-temp --max-cost-usd --model --no-publish --no-scaffold --output-dir --publish-report --report --runs --scaffold --tag --threshold --verbose -h"
             else
                 _comp_compgen -- -W "init"
             fi
             ;;
         "claude plugins eval init")
-            _comp_compgen -- -W "--bare --help -h"
+            _comp_compgen -- -W "--bare --help --interactive -h -i"
             ;;
         "claude plugins i")
             _comp_compgen -- -W "--config --help --scope -h -s"
@@ -455,6 +455,9 @@ _comp_cmd_claude__flag_values()
                     ;;
                 --effort)
                     _comp_compgen -- -W "low medium high xhigh max"
+                    return 0
+                    ;;
+                --environment)
                     return 0
                     ;;
                 --fallback-model)
