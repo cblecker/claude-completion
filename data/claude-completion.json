@@ -1,5 +1,5 @@
 {
-  "version": "2.1.226",
+  "version": "2.1.227",
   "commands": {
     "claude": {
       "flags": {
@@ -1783,6 +1783,12 @@
           "short": "-h"
         },
         "--json": {
+          "type": "bool"
+        },
+        "--no-post": {
+          "type": "bool"
+        },
+        "--post": {
           "type": "bool"
         },
         "--timeout": {
