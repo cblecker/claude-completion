@@ -1,5 +1,5 @@
 {
-  "version": "2.1.228",
+  "version": "2.1.229",
   "commands": {
     "claude": {
       "flags": {
@@ -899,6 +899,10 @@
             "project",
             "local"
           ]
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
         }
       },
       "subcommands": []
@@ -920,6 +924,10 @@
             "project",
             "local"
           ]
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
         }
       },
       "subcommands": []
@@ -1177,6 +1185,10 @@
             "local",
             "managed"
           ]
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
         }
       },
       "subcommands": []
@@ -1439,6 +1451,10 @@
             "project",
             "local"
           ]
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
         }
       },
       "subcommands": []
@@ -1460,6 +1476,10 @@
             "project",
             "local"
           ]
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
         }
       },
       "subcommands": []
@@ -1717,6 +1737,10 @@
             "local",
             "managed"
           ]
+        },
+        "--yes": {
+          "type": "bool",
+          "short": "-y"
         }
       },
       "subcommands": []
