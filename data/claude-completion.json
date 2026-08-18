@@ -1,5 +1,5 @@
 {
-  "version": "2.1.234",
+  "version": "2.1.235",
   "commands": {
     "claude": {
       "flags": {
@@ -741,6 +741,9 @@
         "--case": {
           "type": "value"
         },
+        "--eval-dir": {
+          "type": "dir"
+        },
         "--help": {
           "type": "bool",
           "short": "-h"
@@ -800,6 +803,9 @@
       "flags": {
         "--bare": {
           "type": "bool"
+        },
+        "--eval-dir": {
+          "type": "dir"
         },
         "--help": {
           "type": "bool",
@@ -1293,6 +1299,9 @@
         "--case": {
           "type": "value"
         },
+        "--eval-dir": {
+          "type": "dir"
+        },
         "--help": {
           "type": "bool",
           "short": "-h"
@@ -1352,6 +1361,9 @@
       "flags": {
         "--bare": {
           "type": "bool"
+        },
+        "--eval-dir": {
+          "type": "dir"
         },
         "--help": {
           "type": "bool",
