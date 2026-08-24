@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.241
+# Generated from Claude Code v2.1.243
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -253,7 +253,7 @@ _comp_cmd_claude__complete()
             ;;
         "claude plugin eval")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--ablation --allow-tools --case --eval-dir --help --json --judge-model --keep-temp --max-cost-usd --model --no-publish --no-scaffold --output-dir --publish-report --report --runs --scaffold --tag --threshold --verbose -h"
+                _comp_compgen -- -W "--ablation --allow-tools --case --eval-dir --help --json --judge-model --keep-temp --max-cost-usd --mocks --model --no-publish --no-scaffold --output-dir --publish-report --report --runs --scaffold --tag --threshold --verbose -h"
             else
                 _comp_compgen -- -W "init"
             fi
@@ -337,7 +337,7 @@ _comp_cmd_claude__complete()
             ;;
         "claude plugins eval")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--ablation --allow-tools --case --eval-dir --help --json --judge-model --keep-temp --max-cost-usd --model --no-publish --no-scaffold --output-dir --publish-report --report --runs --scaffold --tag --threshold --verbose -h"
+                _comp_compgen -- -W "--ablation --allow-tools --case --eval-dir --help --json --judge-model --keep-temp --max-cost-usd --mocks --model --no-publish --no-scaffold --output-dir --publish-report --report --runs --scaffold --tag --threshold --verbose -h"
             else
                 _comp_compgen -- -W "init"
             fi
@@ -680,6 +680,9 @@ _comp_cmd_claude__flag_values()
                 --max-cost-usd)
                     return 0
                     ;;
+                --mocks)
+                    return 0
+                    ;;
                 --model)
                     return 0
                     ;;
@@ -879,6 +882,9 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --max-cost-usd)
+                    return 0
+                    ;;
+                --mocks)
                     return 0
                     ;;
                 --model)

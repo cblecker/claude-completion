@@ -1,5 +1,5 @@
 {
-  "version": "2.1.241",
+  "version": "2.1.243",
   "commands": {
     "claude": {
       "flags": {
@@ -760,6 +760,9 @@
         "--max-cost-usd": {
           "type": "value"
         },
+        "--mocks": {
+          "type": "value"
+        },
         "--model": {
           "type": "value"
         },
@@ -1316,6 +1319,9 @@
           "type": "bool"
         },
         "--max-cost-usd": {
+          "type": "value"
+        },
+        "--mocks": {
           "type": "value"
         },
         "--model": {
