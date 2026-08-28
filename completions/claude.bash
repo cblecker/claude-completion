@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.247
+# Generated from Claude Code v2.1.250
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -140,13 +140,13 @@ _comp_cmd_claude__complete()
     case "$1" in
         "claude")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --append-system-prompt --autocompact --ax-screen-reader --background --bare --betas --bg --brief --chrome --cloud --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --effort --environment --fallback-model --file --fork-session --forward-subagent-text --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --model --name --no-chrome --no-session-persistence --output-format --permission-mode --plugin-dir --plugin-url --print --prompt-suggestions --remote-control --replay-user-messages --resume --safe-mode --session-id --setting-sources --settings --strict-mcp-config --system-prompt --teleport --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
+                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --append-system-prompt --autocompact --ax-screen-reader --background --bare --betas --bg --brief --chrome --cloud --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --effort --environment --fallback-model --file --fork-session --forward-subagent-text --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --model --name --no-chrome --no-session-persistence --output-format --permission-mode --plugin-dir --plugin-url --print --prompt-suggestions --remote-control --replay-user-messages --restricted --resume --safe-mode --session-id --setting-sources --settings --strict-mcp-config --system-prompt --teleport --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
             else
                 _comp_compgen -- -W "agents auth auto-mode doctor gateway import install mcp plugin plugins project setup-token ultrareview update upgrade"
             fi
             ;;
         "claude agents")
-            _comp_compgen -- -W "--add-dir --agent --all --allow-dangerously-skip-permissions --cwd --dangerously-skip-permissions --effort --help --json --mcp-config --model --permission-mode --plugin-dir --setting-sources --settings --strict-mcp-config -h"
+            _comp_compgen -- -W "--add-dir --agent --all --allow-dangerously-skip-permissions --cwd --dangerously-skip-permissions --effort --help --json --mcp-config --model --permission-mode --plugin-dir --restricted --setting-sources --settings --strict-mcp-config -h"
             ;;
         "claude auth")
             if [[ "$cur" == -* ]]; then
