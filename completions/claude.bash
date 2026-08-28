@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.250
+# Generated from Claude Code v2.1.251
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -45,6 +45,7 @@ _comp_cmd_claude__has_command()
 {
     case "$1" in
         "claude agents") return 0 ;;
+        "claude attach") return 0 ;;
         "claude auth") return 0 ;;
         "claude auth login") return 0 ;;
         "claude auth logout") return 0 ;;
@@ -58,6 +59,8 @@ _comp_cmd_claude__has_command()
         "claude gateway") return 0 ;;
         "claude import") return 0 ;;
         "claude install") return 0 ;;
+        "claude kill") return 0 ;;
+        "claude logs") return 0 ;;
         "claude mcp") return 0 ;;
         "claude mcp add") return 0 ;;
         "claude mcp add-from-claude-desktop") return 0 ;;
@@ -119,7 +122,10 @@ _comp_cmd_claude__has_command()
         "claude plugins validate") return 0 ;;
         "claude project") return 0 ;;
         "claude project purge") return 0 ;;
+        "claude respawn") return 0 ;;
+        "claude rm") return 0 ;;
         "claude setup-token") return 0 ;;
+        "claude stop") return 0 ;;
         "claude ultrareview") return 0 ;;
         "claude update") return 0 ;;
         "claude upgrade") return 0 ;;
@@ -142,11 +148,13 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --append-system-prompt --autocompact --ax-screen-reader --background --bare --betas --bg --brief --chrome --cloud --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --effort --environment --fallback-model --file --fork-session --forward-subagent-text --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --model --name --no-chrome --no-session-persistence --output-format --permission-mode --plugin-dir --plugin-url --print --prompt-suggestions --remote-control --replay-user-messages --restricted --resume --safe-mode --session-id --setting-sources --settings --strict-mcp-config --system-prompt --teleport --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
             else
-                _comp_compgen -- -W "agents auth auto-mode doctor gateway import install mcp plugin plugins project setup-token ultrareview update upgrade"
+                _comp_compgen -- -W "agents attach auth auto-mode doctor gateway import install kill logs mcp plugin plugins project respawn rm setup-token stop ultrareview update upgrade"
             fi
             ;;
         "claude agents")
             _comp_compgen -- -W "--add-dir --agent --all --allow-dangerously-skip-permissions --cwd --dangerously-skip-permissions --effort --help --json --mcp-config --model --permission-mode --plugin-dir --restricted --setting-sources --settings --strict-mcp-config -h"
+            ;;
+        "claude attach")
             ;;
         "claude auth")
             if [[ "$cur" == -* ]]; then
@@ -194,6 +202,10 @@ _comp_cmd_claude__complete()
             ;;
         "claude install")
             _comp_compgen -- -W "--force --help -h"
+            ;;
+        "claude kill")
+            ;;
+        "claude logs")
             ;;
         "claude mcp")
             if [[ "$cur" == -* ]]; then
@@ -410,8 +422,14 @@ _comp_cmd_claude__complete()
         "claude project purge")
             _comp_compgen -- -W "--all --dry-run --help --interactive --yes -h -i -y"
             ;;
+        "claude respawn")
+            ;;
+        "claude rm")
+            ;;
         "claude setup-token")
             _comp_compgen -- -W "--help -h"
+            ;;
+        "claude stop")
             ;;
         "claude ultrareview")
             _comp_compgen -- -W "--help --json --no-post --post --timeout -h"
