@@ -1,5 +1,5 @@
 {
-  "version": "2.1.250",
+  "version": "2.1.251",
   "commands": {
     "claude": {
       "flags": {
@@ -228,17 +228,23 @@
       },
       "subcommands": [
         "agents",
+        "attach",
         "auth",
         "auto-mode",
         "doctor",
         "gateway",
         "import",
         "install",
+        "logs",
         "mcp",
         "plugin",
         "plugins",
         "project",
+        "respawn",
+        "rm",
         "setup-token",
+        "stop",
+        "kill",
         "ultrareview",
         "update",
         "upgrade"
@@ -304,6 +310,10 @@
           "type": "bool"
         }
       },
+      "subcommands": []
+    },
+    "claude attach": {
+      "flags": {},
       "subcommands": []
     },
     "claude auth": {
@@ -470,6 +480,10 @@
           "short": "-h"
         }
       },
+      "subcommands": []
+    },
+    "claude logs": {
+      "flags": {},
       "subcommands": []
     },
     "claude mcp": {
@@ -1815,6 +1829,14 @@
       },
       "subcommands": []
     },
+    "claude respawn": {
+      "flags": {},
+      "subcommands": []
+    },
+    "claude rm": {
+      "flags": {},
+      "subcommands": []
+    },
     "claude setup-token": {
       "flags": {
         "--help": {
@@ -1822,6 +1844,14 @@
           "short": "-h"
         }
       },
+      "subcommands": []
+    },
+    "claude stop": {
+      "flags": {},
+      "subcommands": []
+    },
+    "claude kill": {
+      "flags": {},
       "subcommands": []
     },
     "claude ultrareview": {
