@@ -1,5 +1,5 @@
 {
-  "version": "2.1.252",
+  "version": "2.1.257",
   "commands": {
     "claude": {
       "flags": {
@@ -203,6 +203,13 @@
         },
         "--system-prompt": {
           "type": "value"
+        },
+        "--system-prompt-snapshot": {
+          "type": "choices",
+          "choices": [
+            "on",
+            "off"
+          ]
         },
         "--teleport": {
           "type": "optional_value"
