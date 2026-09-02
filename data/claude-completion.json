@@ -1,5 +1,5 @@
 {
-  "version": "2.1.258",
+  "version": "2.1.259",
   "commands": {
     "claude": {
       "flags": {
@@ -153,6 +153,14 @@
             "manual",
             "dontAsk",
             "plan"
+          ]
+        },
+        "--permission-prompts": {
+          "type": "choices",
+          "choices": [
+            "host",
+            "none",
+            "host"
           ]
         },
         "--plugin-dir": {
@@ -1235,6 +1243,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--json": {
+          "type": "bool"
+        },
         "--strict": {
           "type": "bool"
         }
@@ -1795,6 +1806,9 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
         },
         "--strict": {
           "type": "bool"
