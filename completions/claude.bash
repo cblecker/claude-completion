@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.260
+# Generated from Claude Code v2.1.261
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -293,7 +293,7 @@ _comp_cmd_claude__complete()
             fi
             ;;
         "claude plugin marketplace add")
-            _comp_compgen -- -W "--help --scope --sparse -h"
+            _comp_compgen -- -W "--claudeai --help --scope --sparse -h"
             ;;
         "claude plugin marketplace list")
             _comp_compgen -- -W "--help --json -h"
@@ -377,7 +377,7 @@ _comp_cmd_claude__complete()
             fi
             ;;
         "claude plugins marketplace add")
-            _comp_compgen -- -W "--help --scope --sparse -h"
+            _comp_compgen -- -W "--claudeai --help --scope --sparse -h"
             ;;
         "claude plugins marketplace list")
             _comp_compgen -- -W "--help --json -h"
