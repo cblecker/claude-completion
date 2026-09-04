@@ -1,5 +1,5 @@
 {
-  "version": "2.1.260",
+  "version": "2.1.261",
   "commands": {
     "claude": {
       "flags": {
@@ -1008,6 +1008,9 @@
     },
     "claude plugin marketplace add": {
       "flags": {
+        "--claudeai": {
+          "type": "bool"
+        },
         "--help": {
           "type": "bool",
           "short": "-h"
@@ -1572,6 +1575,9 @@
     },
     "claude plugins marketplace add": {
       "flags": {
+        "--claudeai": {
+          "type": "bool"
+        },
         "--help": {
           "type": "bool",
           "short": "-h"
