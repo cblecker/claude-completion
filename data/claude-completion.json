@@ -1,5 +1,5 @@
 {
-  "version": "2.1.267",
+  "version": "2.1.268",
   "commands": {
     "claude": {
       "flags": {
@@ -734,6 +734,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--json": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "short": "-s",
@@ -751,6 +754,9 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
         },
         "--scope": {
           "type": "choices",
@@ -935,6 +941,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--json": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "short": "-s",
@@ -959,6 +968,9 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
         },
         "--scope": {
           "type": "choices",
@@ -1167,6 +1179,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--json": {
+          "type": "bool"
+        },
         "--keep-data": {
           "type": "bool"
         },
@@ -1195,6 +1210,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--json": {
+          "type": "bool"
+        },
         "--keep-data": {
           "type": "bool"
         },
@@ -1222,6 +1240,9 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
         },
         "--scope": {
           "type": "choices",
@@ -1301,6 +1322,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--json": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "short": "-s",
@@ -1318,6 +1342,9 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
         },
         "--scope": {
           "type": "choices",
@@ -1502,6 +1529,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--json": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "short": "-s",
@@ -1526,6 +1556,9 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
         },
         "--scope": {
           "type": "choices",
@@ -1734,6 +1767,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--json": {
+          "type": "bool"
+        },
         "--keep-data": {
           "type": "bool"
         },
@@ -1762,6 +1798,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--json": {
+          "type": "bool"
+        },
         "--keep-data": {
           "type": "bool"
         },
@@ -1789,6 +1828,9 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
         },
         "--scope": {
           "type": "choices",

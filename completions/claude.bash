@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.267
+# Generated from Claude Code v2.1.268
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -258,10 +258,10 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--help -h"
             ;;
         "claude plugin disable")
-            _comp_compgen -- -W "--all --help --scope -a -h -s"
+            _comp_compgen -- -W "--all --help --json --scope -a -h -s"
             ;;
         "claude plugin enable")
-            _comp_compgen -- -W "--help --scope -h -s"
+            _comp_compgen -- -W "--help --json --scope -h -s"
             ;;
         "claude plugin eval")
             if [[ "$cur" == -* ]]; then
@@ -274,13 +274,13 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--bare --eval-dir --help --interactive -h -i"
             ;;
         "claude plugin i")
-            _comp_compgen -- -W "--config --help --scope --yes -h -s -y"
+            _comp_compgen -- -W "--config --help --json --scope --yes -h -s -y"
             ;;
         "claude plugin init")
             _comp_compgen -- -W "--author --author-email --description --force --help --with -f -h"
             ;;
         "claude plugin install")
-            _comp_compgen -- -W "--config --help --scope --yes -h -s -y"
+            _comp_compgen -- -W "--config --help --json --scope --yes -h -s -y"
             ;;
         "claude plugin list")
             _comp_compgen -- -W "--available --help --json -h"
@@ -314,16 +314,16 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--dry-run --help --scope --yes -h -s -y"
             ;;
         "claude plugin remove")
-            _comp_compgen -- -W "--help --keep-data --prune --scope --yes -h -s -y"
+            _comp_compgen -- -W "--help --json --keep-data --prune --scope --yes -h -s -y"
             ;;
         "claude plugin tag")
             _comp_compgen -- -W "--dry-run --force --help --message --push --remote -f -h -m"
             ;;
         "claude plugin uninstall")
-            _comp_compgen -- -W "--help --keep-data --prune --scope --yes -h -s -y"
+            _comp_compgen -- -W "--help --json --keep-data --prune --scope --yes -h -s -y"
             ;;
         "claude plugin update")
-            _comp_compgen -- -W "--help --scope --yes -h -s -y"
+            _comp_compgen -- -W "--help --json --scope --yes -h -s -y"
             ;;
         "claude plugin validate")
             _comp_compgen -- -W "--help --json --strict -h"
@@ -342,10 +342,10 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--help -h"
             ;;
         "claude plugins disable")
-            _comp_compgen -- -W "--all --help --scope -a -h -s"
+            _comp_compgen -- -W "--all --help --json --scope -a -h -s"
             ;;
         "claude plugins enable")
-            _comp_compgen -- -W "--help --scope -h -s"
+            _comp_compgen -- -W "--help --json --scope -h -s"
             ;;
         "claude plugins eval")
             if [[ "$cur" == -* ]]; then
@@ -358,13 +358,13 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--bare --eval-dir --help --interactive -h -i"
             ;;
         "claude plugins i")
-            _comp_compgen -- -W "--config --help --scope --yes -h -s -y"
+            _comp_compgen -- -W "--config --help --json --scope --yes -h -s -y"
             ;;
         "claude plugins init")
             _comp_compgen -- -W "--author --author-email --description --force --help --with -f -h"
             ;;
         "claude plugins install")
-            _comp_compgen -- -W "--config --help --scope --yes -h -s -y"
+            _comp_compgen -- -W "--config --help --json --scope --yes -h -s -y"
             ;;
         "claude plugins list")
             _comp_compgen -- -W "--available --help --json -h"
@@ -398,16 +398,16 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--dry-run --help --scope --yes -h -s -y"
             ;;
         "claude plugins remove")
-            _comp_compgen -- -W "--help --keep-data --prune --scope --yes -h -s -y"
+            _comp_compgen -- -W "--help --json --keep-data --prune --scope --yes -h -s -y"
             ;;
         "claude plugins tag")
             _comp_compgen -- -W "--dry-run --force --help --message --push --remote -f -h -m"
             ;;
         "claude plugins uninstall")
-            _comp_compgen -- -W "--help --keep-data --prune --scope --yes -h -s -y"
+            _comp_compgen -- -W "--help --json --keep-data --prune --scope --yes -h -s -y"
             ;;
         "claude plugins update")
-            _comp_compgen -- -W "--help --scope --yes -h -s -y"
+            _comp_compgen -- -W "--help --json --scope --yes -h -s -y"
             ;;
         "claude plugins validate")
             _comp_compgen -- -W "--help --json --strict -h"
