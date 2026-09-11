@@ -1,5 +1,5 @@
 {
-  "version": "2.1.268",
+  "version": "2.1.269",
   "commands": {
     "claude": {
       "flags": {
@@ -775,12 +775,19 @@
         "--ablation": {
           "type": "value"
         },
+        "--allow-real-servers": {
+          "type": "bool"
+        },
         "--allow-tools": {
           "type": "value",
           "repeatable": true
         },
         "--case": {
           "type": "value"
+        },
+        "--concurrency": {
+          "type": "value",
+          "short": "-j"
         },
         "--eval-dir": {
           "type": "dir"
@@ -834,6 +841,9 @@
         },
         "--threshold": {
           "type": "value"
+        },
+        "--trust-plugin": {
+          "type": "bool"
         },
         "--verbose": {
           "type": "bool"
@@ -1363,12 +1373,19 @@
         "--ablation": {
           "type": "value"
         },
+        "--allow-real-servers": {
+          "type": "bool"
+        },
         "--allow-tools": {
           "type": "value",
           "repeatable": true
         },
         "--case": {
           "type": "value"
+        },
+        "--concurrency": {
+          "type": "value",
+          "short": "-j"
         },
         "--eval-dir": {
           "type": "dir"
@@ -1422,6 +1439,9 @@
         },
         "--threshold": {
           "type": "value"
+        },
+        "--trust-plugin": {
+          "type": "bool"
         },
         "--verbose": {
           "type": "bool"
