@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.275
+# Generated from Claude Code v2.1.276
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
