@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.274
+# Generated from Claude Code v2.1.275
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -274,13 +274,13 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--bare --eval-dir --help --interactive -h -i"
             ;;
         "claude plugin i")
-            _comp_compgen -- -W "--accept-command --config --help --json --scope --yes -h -s -y"
+            _comp_compgen -- -W "--accept-command --config --help --json --registry --scope --yes -h -s -y"
             ;;
         "claude plugin init")
             _comp_compgen -- -W "--author --author-email --description --force --help --with -f -h"
             ;;
         "claude plugin install")
-            _comp_compgen -- -W "--accept-command --config --help --json --scope --yes -h -s -y"
+            _comp_compgen -- -W "--accept-command --config --help --json --registry --scope --yes -h -s -y"
             ;;
         "claude plugin list")
             _comp_compgen -- -W "--available --help --json -h"
@@ -358,13 +358,13 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--bare --eval-dir --help --interactive -h -i"
             ;;
         "claude plugins i")
-            _comp_compgen -- -W "--accept-command --config --help --json --scope --yes -h -s -y"
+            _comp_compgen -- -W "--accept-command --config --help --json --registry --scope --yes -h -s -y"
             ;;
         "claude plugins init")
             _comp_compgen -- -W "--author --author-email --description --force --help --with -f -h"
             ;;
         "claude plugins install")
-            _comp_compgen -- -W "--accept-command --config --help --json --scope --yes -h -s -y"
+            _comp_compgen -- -W "--accept-command --config --help --json --registry --scope --yes -h -s -y"
             ;;
         "claude plugins list")
             _comp_compgen -- -W "--available --help --json -h"
@@ -750,6 +750,9 @@ _comp_cmd_claude__flag_values()
                 --config)
                     return 0
                     ;;
+                --registry)
+                    return 0
+                    ;;
                 --scope|-s)
                     _comp_compgen -- -W "user project local"
                     return 0
@@ -779,6 +782,9 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --config)
+                    return 0
+                    ;;
+                --registry)
                     return 0
                     ;;
                 --scope|-s)
@@ -966,6 +972,9 @@ _comp_cmd_claude__flag_values()
                 --config)
                     return 0
                     ;;
+                --registry)
+                    return 0
+                    ;;
                 --scope|-s)
                     _comp_compgen -- -W "user project local"
                     return 0
@@ -995,6 +1004,9 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --config)
+                    return 0
+                    ;;
+                --registry)
                     return 0
                     ;;
                 --scope|-s)
