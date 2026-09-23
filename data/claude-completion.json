@@ -1,5 +1,5 @@
 {
-  "version": "2.1.280",
+  "version": "2.1.281",
   "commands": {
     "claude": {
       "flags": {
@@ -11,7 +11,7 @@
           "type": "value"
         },
         "--agents": {
-          "type": "value"
+          "type": "file"
         },
         "--allow-dangerously-skip-permissions": {
           "type": "bool"

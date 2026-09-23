@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.280
+# Generated from Claude Code v2.1.281
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -456,6 +456,7 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --agents)
+                    _comp_compgen_filedir
                     return 0
                     ;;
                 --append-system-prompt)
