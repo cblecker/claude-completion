@@ -1,5 +1,5 @@
 {
-  "version": "2.1.282",
+  "version": "2.1.283",
   "commands": {
     "claude": {
       "flags": {
@@ -43,6 +43,9 @@
         },
         "--chrome": {
           "type": "bool"
+        },
+        "--client-data-url": {
+          "type": "value"
         },
         "--cloud": {
           "type": "optional_value"
