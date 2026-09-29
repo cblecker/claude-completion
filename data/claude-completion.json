@@ -1,5 +1,5 @@
 {
-  "version": "2.1.284",
+  "version": "2.1.285",
   "commands": {
     "claude": {
       "flags": {
@@ -63,6 +63,9 @@
         },
         "--debug-file": {
           "type": "file"
+        },
+        "--desktop": {
+          "type": "bool"
         },
         "--disable-slash-commands": {
           "type": "bool"
@@ -699,6 +702,7 @@
         }
       },
       "subcommands": [
+        "configure",
         "details",
         "disable",
         "enable",
@@ -717,6 +721,21 @@
         "update",
         "validate"
       ]
+    },
+    "claude plugin configure": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
+        },
+        "--values-stdin": {
+          "type": "bool"
+        }
+      },
+      "subcommands": []
     },
     "claude plugin details": {
       "flags": {
@@ -1018,6 +1037,9 @@
         "--available": {
           "type": "bool"
         },
+        "--data-size": {
+          "type": "optional_value"
+        },
         "--help": {
           "type": "bool",
           "short": "-h"
@@ -1312,6 +1334,7 @@
         }
       },
       "subcommands": [
+        "configure",
         "details",
         "disable",
         "enable",
@@ -1330,6 +1353,21 @@
         "update",
         "validate"
       ]
+    },
+    "claude plugins configure": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
+        },
+        "--values-stdin": {
+          "type": "bool"
+        }
+      },
+      "subcommands": []
     },
     "claude plugins details": {
       "flags": {
@@ -1630,6 +1668,9 @@
       "flags": {
         "--available": {
           "type": "bool"
+        },
+        "--data-size": {
+          "type": "optional_value"
         },
         "--help": {
           "type": "bool",

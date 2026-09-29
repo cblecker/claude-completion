@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.284
+# Generated from Claude Code v2.1.285
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -74,6 +74,7 @@ _comp_cmd_claude__has_command()
         "claude mcp serve") return 0 ;;
         "claude plugin") return 0 ;;
         "claude plugin autoremove") return 0 ;;
+        "claude plugin configure") return 0 ;;
         "claude plugin details") return 0 ;;
         "claude plugin disable") return 0 ;;
         "claude plugin enable") return 0 ;;
@@ -98,6 +99,7 @@ _comp_cmd_claude__has_command()
         "claude plugin validate") return 0 ;;
         "claude plugins") return 0 ;;
         "claude plugins autoremove") return 0 ;;
+        "claude plugins configure") return 0 ;;
         "claude plugins details") return 0 ;;
         "claude plugins disable") return 0 ;;
         "claude plugins enable") return 0 ;;
@@ -146,7 +148,7 @@ _comp_cmd_claude__complete()
     case "$1" in
         "claude")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --append-system-prompt --autocompact --ax-screen-reader --background --bare --betas --bg --brief --chrome --client-data-url --cloud --continue --dangerously-skip-permissions --debug --debug-file --disable-slash-commands --effort --environment --fallback-model --file --fork-session --forward-subagent-text --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --model --name --no-chrome --no-session-persistence --output-format --permission-mode --permission-prompts --plugin-dir --plugin-url --print --prompt-suggestions --remote-control --replay-user-messages --restricted --resume --safe-mode --session-id --setting-sources --settings --strict-mcp-config --system-prompt --system-prompt-snapshot --teleport --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
+                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --append-system-prompt --autocompact --ax-screen-reader --background --bare --betas --bg --brief --chrome --client-data-url --cloud --continue --dangerously-skip-permissions --debug --debug-file --desktop --disable-slash-commands --effort --environment --fallback-model --file --fork-session --forward-subagent-text --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --model --name --no-chrome --no-session-persistence --output-format --permission-mode --permission-prompts --plugin-dir --plugin-url --print --prompt-suggestions --remote-control --replay-user-messages --restricted --resume --safe-mode --session-id --setting-sources --settings --strict-mcp-config --system-prompt --system-prompt-snapshot --teleport --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
             else
                 _comp_compgen -- -W "agents attach auth auto-mode doctor gateway import install kill logs mcp plugin plugins project respawn rm setup-token stop ultrareview update upgrade"
             fi
@@ -248,11 +250,14 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "autoremove details disable enable eval i init install list marketplace new prune remove tag uninstall update validate"
+                _comp_compgen -- -W "autoremove configure details disable enable eval i init install list marketplace new prune remove tag uninstall update validate"
             fi
             ;;
         "claude plugin autoremove")
             _comp_compgen -- -W "--dry-run --help --scope --yes -h -s -y"
+            ;;
+        "claude plugin configure")
+            _comp_compgen -- -W "--help --json --values-stdin -h"
             ;;
         "claude plugin details")
             _comp_compgen -- -W "--help -h"
@@ -283,7 +288,7 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--accept-command --config --help --json --registry --scope --yes -h -s -y"
             ;;
         "claude plugin list")
-            _comp_compgen -- -W "--available --help --json -h"
+            _comp_compgen -- -W "--available --data-size --help --json -h"
             ;;
         "claude plugin marketplace")
             if [[ "$cur" == -* ]]; then
@@ -332,11 +337,14 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "autoremove details disable enable eval i init install list marketplace new prune remove tag uninstall update validate"
+                _comp_compgen -- -W "autoremove configure details disable enable eval i init install list marketplace new prune remove tag uninstall update validate"
             fi
             ;;
         "claude plugins autoremove")
             _comp_compgen -- -W "--dry-run --help --scope --yes -h -s -y"
+            ;;
+        "claude plugins configure")
+            _comp_compgen -- -W "--help --json --values-stdin -h"
             ;;
         "claude plugins details")
             _comp_compgen -- -W "--help -h"
@@ -367,7 +375,7 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--accept-command --config --help --json --registry --scope --yes -h -s -y"
             ;;
         "claude plugins list")
-            _comp_compgen -- -W "--available --help --json -h"
+            _comp_compgen -- -W "--available --data-size --help --json -h"
             ;;
         "claude plugins marketplace")
             if [[ "$cur" == -* ]]; then
