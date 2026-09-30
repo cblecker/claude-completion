@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.285
+# Generated from Claude Code v2.1.286
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -94,6 +94,7 @@ _comp_cmd_claude__has_command()
         "claude plugin prune") return 0 ;;
         "claude plugin remove") return 0 ;;
         "claude plugin tag") return 0 ;;
+        "claude plugin test") return 0 ;;
         "claude plugin uninstall") return 0 ;;
         "claude plugin update") return 0 ;;
         "claude plugin validate") return 0 ;;
@@ -119,6 +120,7 @@ _comp_cmd_claude__has_command()
         "claude plugins prune") return 0 ;;
         "claude plugins remove") return 0 ;;
         "claude plugins tag") return 0 ;;
+        "claude plugins test") return 0 ;;
         "claude plugins uninstall") return 0 ;;
         "claude plugins update") return 0 ;;
         "claude plugins validate") return 0 ;;
@@ -250,7 +252,7 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "autoremove configure details disable enable eval i init install list marketplace new prune remove tag uninstall update validate"
+                _comp_compgen -- -W "autoremove configure details disable enable eval i init install list marketplace new prune remove tag test uninstall update validate"
             fi
             ;;
         "claude plugin autoremove")
@@ -324,6 +326,9 @@ _comp_cmd_claude__complete()
         "claude plugin tag")
             _comp_compgen -- -W "--dry-run --force --help --message --push --remote -f -h -m"
             ;;
+        "claude plugin test")
+            _comp_compgen -- -W "--help -h"
+            ;;
         "claude plugin uninstall")
             _comp_compgen -- -W "--help --json --keep-data --prune --scope --yes -h -s -y"
             ;;
@@ -337,7 +342,7 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "autoremove configure details disable enable eval i init install list marketplace new prune remove tag uninstall update validate"
+                _comp_compgen -- -W "autoremove configure details disable enable eval i init install list marketplace new prune remove tag test uninstall update validate"
             fi
             ;;
         "claude plugins autoremove")
@@ -410,6 +415,9 @@ _comp_cmd_claude__complete()
             ;;
         "claude plugins tag")
             _comp_compgen -- -W "--dry-run --force --help --message --push --remote -f -h -m"
+            ;;
+        "claude plugins test")
+            _comp_compgen -- -W "--help -h"
             ;;
         "claude plugins uninstall")
             _comp_compgen -- -W "--help --json --keep-data --prune --scope --yes -h -s -y"

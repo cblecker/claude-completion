@@ -1,5 +1,5 @@
 {
-  "version": "2.1.285",
+  "version": "2.1.286",
   "commands": {
     "claude": {
       "flags": {
@@ -716,6 +716,7 @@
         "prune",
         "autoremove",
         "tag",
+        "test",
         "uninstall",
         "remove",
         "update",
@@ -1220,6 +1221,15 @@
       },
       "subcommands": []
     },
+    "claude plugin test": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
     "claude plugin uninstall": {
       "flags": {
         "--help": {
@@ -1348,6 +1358,7 @@
         "prune",
         "autoremove",
         "tag",
+        "test",
         "uninstall",
         "remove",
         "update",
@@ -1848,6 +1859,15 @@
         },
         "--remote": {
           "type": "value"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins test": {
+      "flags": {
+        "--help": {
+          "type": "bool",
+          "short": "-h"
         }
       },
       "subcommands": []
