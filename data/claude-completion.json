@@ -1,5 +1,5 @@
 {
-  "version": "2.1.286",
+  "version": "2.1.287",
   "commands": {
     "claude": {
       "flags": {
@@ -43,9 +43,6 @@
         },
         "--chrome": {
           "type": "bool"
-        },
-        "--client-data-url": {
-          "type": "value"
         },
         "--cloud": {
           "type": "optional_value"
@@ -1075,6 +1072,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--json": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "choices": [
@@ -1108,6 +1108,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--json": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "choices": [
@@ -1125,6 +1128,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--json": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "choices": [
@@ -1141,6 +1147,9 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
         }
       },
       "subcommands": []
@@ -1717,6 +1726,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--json": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "choices": [
@@ -1750,6 +1762,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--json": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "choices": [
@@ -1767,6 +1782,9 @@
           "type": "bool",
           "short": "-h"
         },
+        "--json": {
+          "type": "bool"
+        },
         "--scope": {
           "type": "choices",
           "choices": [
@@ -1783,6 +1801,9 @@
         "--help": {
           "type": "bool",
           "short": "-h"
+        },
+        "--json": {
+          "type": "bool"
         }
       },
       "subcommands": []
