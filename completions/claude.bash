@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.286
+# Generated from Claude Code v2.1.287
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -150,7 +150,7 @@ _comp_cmd_claude__complete()
     case "$1" in
         "claude")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --append-system-prompt --autocompact --ax-screen-reader --background --bare --betas --bg --brief --chrome --client-data-url --cloud --continue --dangerously-skip-permissions --debug --debug-file --desktop --disable-slash-commands --effort --environment --fallback-model --file --fork-session --forward-subagent-text --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --model --name --no-chrome --no-session-persistence --output-format --permission-mode --permission-prompts --plugin-dir --plugin-url --print --prompt-suggestions --remote-control --replay-user-messages --restricted --resume --safe-mode --session-id --setting-sources --settings --strict-mcp-config --system-prompt --system-prompt-snapshot --teleport --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
+                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --append-system-prompt --autocompact --ax-screen-reader --background --bare --betas --bg --brief --chrome --cloud --continue --dangerously-skip-permissions --debug --debug-file --desktop --disable-slash-commands --effort --environment --fallback-model --file --fork-session --forward-subagent-text --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --model --name --no-chrome --no-session-persistence --output-format --permission-mode --permission-prompts --plugin-dir --plugin-url --print --prompt-suggestions --remote-control --replay-user-messages --restricted --resume --safe-mode --session-id --setting-sources --settings --strict-mcp-config --system-prompt --system-prompt-snapshot --teleport --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
             else
                 _comp_compgen -- -W "agents attach auth auto-mode doctor gateway import install kill logs mcp plugin plugins project respawn rm setup-token stop ultrareview update upgrade"
             fi
@@ -300,19 +300,19 @@ _comp_cmd_claude__complete()
             fi
             ;;
         "claude plugin marketplace add")
-            _comp_compgen -- -W "--claudeai --help --scope --sparse -h"
+            _comp_compgen -- -W "--claudeai --help --json --scope --sparse -h"
             ;;
         "claude plugin marketplace list")
             _comp_compgen -- -W "--help --json -h"
             ;;
         "claude plugin marketplace remove")
-            _comp_compgen -- -W "--help --scope -h"
+            _comp_compgen -- -W "--help --json --scope -h"
             ;;
         "claude plugin marketplace rm")
-            _comp_compgen -- -W "--help --scope -h"
+            _comp_compgen -- -W "--help --json --scope -h"
             ;;
         "claude plugin marketplace update")
-            _comp_compgen -- -W "--help -h"
+            _comp_compgen -- -W "--help --json -h"
             ;;
         "claude plugin new")
             _comp_compgen -- -W "--author --author-email --description --force --help --with -f -h"
@@ -390,19 +390,19 @@ _comp_cmd_claude__complete()
             fi
             ;;
         "claude plugins marketplace add")
-            _comp_compgen -- -W "--claudeai --help --scope --sparse -h"
+            _comp_compgen -- -W "--claudeai --help --json --scope --sparse -h"
             ;;
         "claude plugins marketplace list")
             _comp_compgen -- -W "--help --json -h"
             ;;
         "claude plugins marketplace remove")
-            _comp_compgen -- -W "--help --scope -h"
+            _comp_compgen -- -W "--help --json --scope -h"
             ;;
         "claude plugins marketplace rm")
-            _comp_compgen -- -W "--help --scope -h"
+            _comp_compgen -- -W "--help --json --scope -h"
             ;;
         "claude plugins marketplace update")
-            _comp_compgen -- -W "--help -h"
+            _comp_compgen -- -W "--help --json -h"
             ;;
         "claude plugins new")
             _comp_compgen -- -W "--author --author-email --description --force --help --with -f -h"
@@ -482,9 +482,6 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --betas)
-                    return 0
-                    ;;
-                --client-data-url)
                     return 0
                     ;;
                 --debug-file)
