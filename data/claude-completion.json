@@ -1,5 +1,5 @@
 {
-  "version": "2.1.287",
+  "version": "2.1.288",
   "commands": {
     "claude": {
       "flags": {
@@ -257,7 +257,7 @@
         "mcp",
         "plugin",
         "plugins",
-        "project",
+        "purge",
         "respawn",
         "rm",
         "setup-token",
@@ -1999,18 +1999,7 @@
       },
       "subcommands": []
     },
-    "claude project": {
-      "flags": {
-        "--help": {
-          "type": "bool",
-          "short": "-h"
-        }
-      },
-      "subcommands": [
-        "purge"
-      ]
-    },
-    "claude project purge": {
+    "claude purge": {
       "flags": {
         "--all": {
           "type": "bool"

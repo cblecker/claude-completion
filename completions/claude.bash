@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.287
+# Generated from Claude Code v2.1.288
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -124,8 +124,7 @@ _comp_cmd_claude__has_command()
         "claude plugins uninstall") return 0 ;;
         "claude plugins update") return 0 ;;
         "claude plugins validate") return 0 ;;
-        "claude project") return 0 ;;
-        "claude project purge") return 0 ;;
+        "claude purge") return 0 ;;
         "claude respawn") return 0 ;;
         "claude rm") return 0 ;;
         "claude setup-token") return 0 ;;
@@ -152,7 +151,7 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --append-system-prompt --autocompact --ax-screen-reader --background --bare --betas --bg --brief --chrome --cloud --continue --dangerously-skip-permissions --debug --debug-file --desktop --disable-slash-commands --effort --environment --fallback-model --file --fork-session --forward-subagent-text --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --model --name --no-chrome --no-session-persistence --output-format --permission-mode --permission-prompts --plugin-dir --plugin-url --print --prompt-suggestions --remote-control --replay-user-messages --restricted --resume --safe-mode --session-id --setting-sources --settings --strict-mcp-config --system-prompt --system-prompt-snapshot --teleport --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
             else
-                _comp_compgen -- -W "agents attach auth auto-mode doctor gateway import install kill logs mcp plugin plugins project respawn rm setup-token stop ultrareview update upgrade"
+                _comp_compgen -- -W "agents attach auth auto-mode doctor gateway import install kill logs mcp plugin plugins purge respawn rm setup-token stop ultrareview update upgrade"
             fi
             ;;
         "claude agents")
@@ -428,14 +427,7 @@ _comp_cmd_claude__complete()
         "claude plugins validate")
             _comp_compgen -- -W "--help --json --strict -h"
             ;;
-        "claude project")
-            if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--help -h"
-            else
-                _comp_compgen -- -W "purge"
-            fi
-            ;;
-        "claude project purge")
+        "claude purge")
             _comp_compgen -- -W "--all --dry-run --help --interactive --yes -h -i -y"
             ;;
         "claude respawn")
