@@ -1,5 +1,5 @@
 {
-  "version": "2.1.291",
+  "version": "2.1.292",
   "commands": {
     "claude": {
       "flags": {
@@ -977,6 +977,9 @@
         "--json": {
           "type": "bool"
         },
+        "--marketplace": {
+          "type": "value"
+        },
         "--registry": {
           "type": "value"
         },
@@ -1010,6 +1013,9 @@
         },
         "--json": {
           "type": "bool"
+        },
+        "--marketplace": {
+          "type": "value"
         },
         "--registry": {
           "type": "value"
@@ -1631,6 +1637,9 @@
         "--json": {
           "type": "bool"
         },
+        "--marketplace": {
+          "type": "value"
+        },
         "--registry": {
           "type": "value"
         },
@@ -1664,6 +1673,9 @@
         },
         "--json": {
           "type": "bool"
+        },
+        "--marketplace": {
+          "type": "value"
         },
         "--registry": {
           "type": "value"
