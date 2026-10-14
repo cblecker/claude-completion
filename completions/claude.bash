@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.296
+# Generated from Claude Code v2.1.299
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -271,7 +271,7 @@ _comp_cmd_claude__complete()
             ;;
         "claude plugin eval")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--ablation --allow-real-servers --allow-tools --case --concurrency --eval-dir --help --json --judge-model --keep-temp --max-cost-usd --mocks --model --no-publish --no-scaffold --output-dir --publish-report --report --runs --scaffold --tag --threshold --trust-plugin --verbose -h -j"
+                _comp_compgen -- -W "--ablation --allow-real-servers --allow-tools --case --concurrency --disallow-tools --eval-dir --help --json --judge-model --keep-temp --max-cost-usd --mocks --model --no-publish --no-scaffold --output-dir --publish-report --report --runs --scaffold --tag --threshold --trust-plugin --verbose -h -j"
             else
                 _comp_compgen -- -W "init"
             fi
@@ -361,7 +361,7 @@ _comp_cmd_claude__complete()
             ;;
         "claude plugins eval")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--ablation --allow-real-servers --allow-tools --case --concurrency --eval-dir --help --json --judge-model --keep-temp --max-cost-usd --mocks --model --no-publish --no-scaffold --output-dir --publish-report --report --runs --scaffold --tag --threshold --trust-plugin --verbose -h -j"
+                _comp_compgen -- -W "--ablation --allow-real-servers --allow-tools --case --concurrency --disallow-tools --eval-dir --help --json --judge-model --keep-temp --max-cost-usd --mocks --model --no-publish --no-scaffold --output-dir --publish-report --report --runs --scaffold --tag --threshold --trust-plugin --verbose -h -j"
             else
                 _comp_compgen -- -W "init"
             fi
@@ -708,6 +708,9 @@ _comp_cmd_claude__flag_values()
                 --concurrency|-j)
                     return 0
                     ;;
+                --disallow-tools)
+                    return 0
+                    ;;
                 --eval-dir)
                     _comp_compgen_filedir -d
                     return 0
@@ -934,6 +937,9 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --concurrency|-j)
+                    return 0
+                    ;;
+                --disallow-tools)
                     return 0
                     ;;
                 --eval-dir)
