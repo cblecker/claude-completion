@@ -1,5 +1,5 @@
 {
-  "version": "2.1.296",
+  "version": "2.1.299",
   "commands": {
     "claude": {
       "flags": {
@@ -809,6 +809,10 @@
           "type": "value",
           "short": "-j"
         },
+        "--disallow-tools": {
+          "type": "value",
+          "repeatable": true
+        },
         "--eval-dir": {
           "type": "dir"
         },
@@ -1468,6 +1472,10 @@
         "--concurrency": {
           "type": "value",
           "short": "-j"
+        },
+        "--disallow-tools": {
+          "type": "value",
+          "repeatable": true
         },
         "--eval-dir": {
           "type": "dir"
