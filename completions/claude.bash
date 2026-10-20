@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.304
+# Generated from Claude Code v2.1.305
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -335,7 +335,7 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--accept-command --help --json --scope --yes -h -s -y"
             ;;
         "claude plugin validate")
-            _comp_compgen -- -W "--help --json --strict -h"
+            _comp_compgen -- -W "--help --json --profile --strict -h"
             ;;
         "claude plugins")
             if [[ "$cur" == -* ]]; then
@@ -425,7 +425,7 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--accept-command --help --json --scope --yes -h -s -y"
             ;;
         "claude plugins validate")
-            _comp_compgen -- -W "--help --json --strict -h"
+            _comp_compgen -- -W "--help --json --profile --strict -h"
             ;;
         "claude purge")
             _comp_compgen -- -W "--all --dry-run --help --interactive --yes -h -i -y"
@@ -901,6 +901,14 @@ _comp_cmd_claude__flag_values()
                     ;;
             esac
             ;;
+        "claude plugin validate")
+            case "$prev" in
+                --profile)
+                    _comp_compgen -- -W "directory"
+                    return 0
+                    ;;
+            esac
+            ;;
         "claude plugins autoremove")
             case "$prev" in
                 --scope|-s)
@@ -1128,6 +1136,14 @@ _comp_cmd_claude__flag_values()
                     ;;
                 --scope|-s)
                     _comp_compgen -- -W "user project local managed"
+                    return 0
+                    ;;
+            esac
+            ;;
+        "claude plugins validate")
+            case "$prev" in
+                --profile)
+                    _comp_compgen -- -W "directory"
                     return 0
                     ;;
             esac
