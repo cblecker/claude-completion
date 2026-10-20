@@ -1,5 +1,5 @@
 {
-  "version": "2.1.304",
+  "version": "2.1.305",
   "commands": {
     "claude": {
       "flags": {
@@ -1349,6 +1349,12 @@
         "--json": {
           "type": "bool"
         },
+        "--profile": {
+          "type": "choices",
+          "choices": [
+            "directory"
+          ]
+        },
         "--strict": {
           "type": "bool"
         }
@@ -2012,6 +2018,12 @@
         },
         "--json": {
           "type": "bool"
+        },
+        "--profile": {
+          "type": "choices",
+          "choices": [
+            "directory"
+          ]
         },
         "--strict": {
           "type": "bool"
