@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.308
+# Generated from Claude Code v2.1.309
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -440,7 +440,7 @@ _comp_cmd_claude__complete()
         "claude stop")
             ;;
         "claude ultrareview")
-            _comp_compgen -- -W "--help --json --no-post --post --timeout -h"
+            _comp_compgen -- -W "--help --json --no-post --post --timeout --trust-workspace -h"
             ;;
         "claude update")
             _comp_compgen -- -W "--help -h"

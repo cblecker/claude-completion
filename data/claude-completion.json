@@ -1,5 +1,5 @@
 {
-  "version": "2.1.308",
+  "version": "2.1.309",
   "commands": {
     "claude": {
       "flags": {
@@ -2096,6 +2096,9 @@
         },
         "--timeout": {
           "type": "value"
+        },
+        "--trust-workspace": {
+          "type": "bool"
         }
       },
       "subcommands": []
