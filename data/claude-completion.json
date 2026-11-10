@@ -1,5 +1,5 @@
 {
-  "version": "2.1.319",
+  "version": "2.1.321",
   "commands": {
     "claude": {
       "flags": {
@@ -712,6 +712,7 @@
         "marketplace",
         "prune",
         "autoremove",
+        "restore-set-aside",
         "tag",
         "test",
         "uninstall",
@@ -1214,6 +1215,18 @@
       },
       "subcommands": []
     },
+    "claude plugin restore-set-aside": {
+      "flags": {
+        "--discard": {
+          "type": "bool"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
+        }
+      },
+      "subcommands": []
+    },
     "claude plugin tag": {
       "flags": {
         "--dry-run": {
@@ -1382,6 +1395,7 @@
         "marketplace",
         "prune",
         "autoremove",
+        "restore-set-aside",
         "tag",
         "test",
         "uninstall",
@@ -1880,6 +1894,18 @@
         "--yes": {
           "type": "bool",
           "short": "-y"
+        }
+      },
+      "subcommands": []
+    },
+    "claude plugins restore-set-aside": {
+      "flags": {
+        "--discard": {
+          "type": "bool"
+        },
+        "--help": {
+          "type": "bool",
+          "short": "-h"
         }
       },
       "subcommands": []
