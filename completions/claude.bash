@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.322
+# Generated from Claude Code v2.1.323
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -62,7 +62,6 @@ _comp_cmd_claude__has_command()
         "claude kill") return 0 ;;
         "claude logs") return 0 ;;
         "claude mcp") return 0 ;;
-        "claude mcp add") return 0 ;;
         "claude mcp add-from-claude-desktop") return 0 ;;
         "claude mcp add-json") return 0 ;;
         "claude mcp get") return 0 ;;
@@ -216,11 +215,8 @@ _comp_cmd_claude__complete()
             if [[ "$cur" == -* ]]; then
                 _comp_compgen -- -W "--help -h"
             else
-                _comp_compgen -- -W "add add-from-claude-desktop add-json get list login logout remove reset-project-choices serve"
+                _comp_compgen -- -W "add-from-claude-desktop add-json get list login logout remove reset-project-choices serve"
             fi
-            ;;
-        "claude mcp add")
-            _comp_compgen -- -W "--callback-port --client-id --client-secret --env --header --help --scope --transport -H -e -h -s -t"
             ;;
         "claude mcp add-from-claude-desktop")
             _comp_compgen -- -W "--help --scope -h -s"
@@ -282,13 +278,13 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--bare --eval-dir --help --interactive -h -i"
             ;;
         "claude plugin i")
-            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --registry --scope --yes -h -s -y"
+            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --scope --yes -h -s -y"
             ;;
         "claude plugin init")
             _comp_compgen -- -W "--author --author-email --description --force --help --with -f -h"
             ;;
         "claude plugin install")
-            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --registry --scope --yes -h -s -y"
+            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --scope --yes -h -s -y"
             ;;
         "claude plugin list")
             _comp_compgen -- -W "--available --data-size --help --json -h"
@@ -375,13 +371,13 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--bare --eval-dir --help --interactive -h -i"
             ;;
         "claude plugins i")
-            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --registry --scope --yes -h -s -y"
+            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --scope --yes -h -s -y"
             ;;
         "claude plugins init")
             _comp_compgen -- -W "--author --author-email --description --force --help --with -f -h"
             ;;
         "claude plugins install")
-            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --registry --scope --yes -h -s -y"
+            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --scope --yes -h -s -y"
             ;;
         "claude plugins list")
             _comp_compgen -- -W "--available --data-size --help --json -h"
@@ -630,30 +626,6 @@ _comp_cmd_claude__flag_values()
                     ;;
             esac
             ;;
-        "claude mcp add")
-            case "$prev" in
-                --callback-port)
-                    return 0
-                    ;;
-                --client-id)
-                    return 0
-                    ;;
-                --env|-e)
-                    return 0
-                    ;;
-                --header|-H)
-                    return 0
-                    ;;
-                --scope|-s)
-                    _comp_compgen -- -W "local user project"
-                    return 0
-                    ;;
-                --transport|-t)
-                    _comp_compgen -- -W "stdio sse http"
-                    return 0
-                    ;;
-            esac
-            ;;
         "claude mcp add-from-claude-desktop")
             case "$prev" in
                 --scope|-s)
@@ -773,9 +745,6 @@ _comp_cmd_claude__flag_values()
                 --marketplace)
                     return 0
                     ;;
-                --registry)
-                    return 0
-                    ;;
                 --scope|-s)
                     _comp_compgen -- -W "user project local"
                     return 0
@@ -808,9 +777,6 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --marketplace)
-                    return 0
-                    ;;
-                --registry)
                     return 0
                     ;;
                 --scope|-s)
@@ -1012,9 +978,6 @@ _comp_cmd_claude__flag_values()
                 --marketplace)
                     return 0
                     ;;
-                --registry)
-                    return 0
-                    ;;
                 --scope|-s)
                     _comp_compgen -- -W "user project local"
                     return 0
@@ -1047,9 +1010,6 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --marketplace)
-                    return 0
-                    ;;
-                --registry)
                     return 0
                     ;;
                 --scope|-s)

@@ -1,5 +1,5 @@
 {
-  "version": "2.1.322",
+  "version": "2.1.323",
   "commands": {
     "claude": {
       "flags": {
@@ -512,7 +512,6 @@
         }
       },
       "subcommands": [
-        "add",
         "add-from-claude-desktop",
         "add-json",
         "get",
@@ -523,52 +522,6 @@
         "reset-project-choices",
         "serve"
       ]
-    },
-    "claude mcp add": {
-      "flags": {
-        "--callback-port": {
-          "type": "value"
-        },
-        "--client-id": {
-          "type": "value"
-        },
-        "--client-secret": {
-          "type": "bool"
-        },
-        "--env": {
-          "type": "value",
-          "short": "-e",
-          "repeatable": true
-        },
-        "--header": {
-          "type": "value",
-          "short": "-H",
-          "repeatable": true
-        },
-        "--help": {
-          "type": "bool",
-          "short": "-h"
-        },
-        "--scope": {
-          "type": "choices",
-          "short": "-s",
-          "choices": [
-            "local",
-            "user",
-            "project"
-          ]
-        },
-        "--transport": {
-          "type": "choices",
-          "short": "-t",
-          "choices": [
-            "stdio",
-            "sse",
-            "http"
-          ]
-        }
-      },
-      "subcommands": []
     },
     "claude mcp add-from-claude-desktop": {
       "flags": {
@@ -985,9 +938,6 @@
         "--marketplace": {
           "type": "value"
         },
-        "--registry": {
-          "type": "value"
-        },
         "--scope": {
           "type": "choices",
           "short": "-s",
@@ -1020,9 +970,6 @@
           "type": "bool"
         },
         "--marketplace": {
-          "type": "value"
-        },
-        "--registry": {
           "type": "value"
         },
         "--scope": {
@@ -1668,9 +1615,6 @@
         "--marketplace": {
           "type": "value"
         },
-        "--registry": {
-          "type": "value"
-        },
         "--scope": {
           "type": "choices",
           "short": "-s",
@@ -1703,9 +1647,6 @@
           "type": "bool"
         },
         "--marketplace": {
-          "type": "value"
-        },
-        "--registry": {
           "type": "value"
         },
         "--scope": {
