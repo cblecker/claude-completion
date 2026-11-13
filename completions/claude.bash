@@ -1,5 +1,5 @@
 # claude bash completion                                   -*- shell-script -*-
-# Generated from Claude Code v2.1.322
+# Generated from Claude Code v2.1.323
 # https://github.com/cblecker/claude-completion
 # Requires bash-completion@2
 
@@ -151,7 +151,7 @@ _comp_cmd_claude__complete()
     case "$1" in
         "claude")
             if [[ "$cur" == -* ]]; then
-                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --append-system-prompt --autocompact --ax-screen-reader --background --bare --betas --bg --brief --chrome --cloud --continue --dangerously-skip-permissions --debug --debug-file --desktop --disable-slash-commands --effort --environment --fallback-model --file --fork-session --forward-subagent-text --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --model --name --no-chrome --no-session-persistence --output-format --permission-mode --permission-prompts --plugin-dir --plugin-url --print --prompt-suggestions --remote-control --replay-user-messages --restricted --resume --safe-mode --session-id --setting-sources --settings --strict-mcp-config --system-prompt --system-prompt-snapshot --teleport --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
+                _comp_compgen -- -W "--add-dir --agent --agents --allow-dangerously-skip-permissions --allowed-tools --allowedTools --append-system-prompt --autocompact --ax-screen-reader --background --bare --betas --bg --brief --chrome --cloud --continue --dangerously-skip-permissions --debug --debug-file --desktop --disable-slash-commands --disallowed-tools --disallowedTools --effort --environment --exclude-dynamic-system-prompt-sections --fallback-model --file --fork-session --forward-subagent-text --from-pr --help --ide --include-hook-events --include-partial-messages --input-format --json-schema --max-budget-usd --mcp-config --model --name --no-chrome --no-session-persistence --output-format --permission-mode --permission-prompts --plugin-dir --plugin-url --print --prompt-suggestions --remote-control --remote-control-session-name-prefix --replay-user-messages --restricted --resume --safe-mode --session-id --setting-sources --settings --strict-mcp-config --system-prompt --system-prompt-snapshot --teleport --tmux --tools --verbose --version --worktree -c -d -h -n -p -r -v -w"
             else
                 _comp_compgen -- -W "agents attach auth auto-mode doctor gateway import install kill logs mcp plugin plugins purge respawn rm setup-token stop ultrareview update upgrade"
             fi
@@ -282,13 +282,13 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--bare --eval-dir --help --interactive -h -i"
             ;;
         "claude plugin i")
-            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --registry --scope --yes -h -s -y"
+            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --scope --yes -h -s -y"
             ;;
         "claude plugin init")
             _comp_compgen -- -W "--author --author-email --description --force --help --with -f -h"
             ;;
         "claude plugin install")
-            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --registry --scope --yes -h -s -y"
+            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --scope --yes -h -s -y"
             ;;
         "claude plugin list")
             _comp_compgen -- -W "--available --data-size --help --json -h"
@@ -375,13 +375,13 @@ _comp_cmd_claude__complete()
             _comp_compgen -- -W "--bare --eval-dir --help --interactive -h -i"
             ;;
         "claude plugins i")
-            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --registry --scope --yes -h -s -y"
+            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --scope --yes -h -s -y"
             ;;
         "claude plugins init")
             _comp_compgen -- -W "--author --author-email --description --force --help --with -f -h"
             ;;
         "claude plugins install")
-            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --registry --scope --yes -h -s -y"
+            _comp_compgen -- -W "--accept-command --config --help --json --marketplace --scope --yes -h -s -y"
             ;;
         "claude plugins list")
             _comp_compgen -- -W "--available --data-size --help --json -h"
@@ -475,6 +475,12 @@ _comp_cmd_claude__flag_values()
                     _comp_compgen_filedir
                     return 0
                     ;;
+                --allowed-tools)
+                    return 0
+                    ;;
+                --allowedTools)
+                    return 0
+                    ;;
                 --append-system-prompt)
                     return 0
                     ;;
@@ -486,6 +492,12 @@ _comp_cmd_claude__flag_values()
                     ;;
                 --debug-file)
                     _comp_compgen_filedir
+                    return 0
+                    ;;
+                --disallowed-tools)
+                    return 0
+                    ;;
+                --disallowedTools)
                     return 0
                     ;;
                 --effort)
@@ -537,6 +549,9 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --plugin-url)
+                    return 0
+                    ;;
+                --remote-control-session-name-prefix)
                     return 0
                     ;;
                 --session-id)
@@ -773,9 +788,6 @@ _comp_cmd_claude__flag_values()
                 --marketplace)
                     return 0
                     ;;
-                --registry)
-                    return 0
-                    ;;
                 --scope|-s)
                     _comp_compgen -- -W "user project local"
                     return 0
@@ -808,9 +820,6 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --marketplace)
-                    return 0
-                    ;;
-                --registry)
                     return 0
                     ;;
                 --scope|-s)
@@ -1012,9 +1021,6 @@ _comp_cmd_claude__flag_values()
                 --marketplace)
                     return 0
                     ;;
-                --registry)
-                    return 0
-                    ;;
                 --scope|-s)
                     _comp_compgen -- -W "user project local"
                     return 0
@@ -1047,9 +1053,6 @@ _comp_cmd_claude__flag_values()
                     return 0
                     ;;
                 --marketplace)
-                    return 0
-                    ;;
-                --registry)
                     return 0
                     ;;
                 --scope|-s)
