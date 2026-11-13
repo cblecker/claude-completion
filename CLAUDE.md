@@ -17,7 +17,7 @@
 - `make generate` — read JSON, produce bash completion script
 - `make update` — parse + generate (used by automation)
 - `make validate` — check JSON validity + bash syntax
-- `make test` — validate + run functional tests
+- `make test` — validate + run parser unit tests + completion tests
 - `make verify-generation` — ensure generated script matches data (no manual edits)
 
 ## License

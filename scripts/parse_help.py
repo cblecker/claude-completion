@@ -116,24 +116,30 @@ def try_parse_flag(line):
     #   -s, --long-name <value>   Description
     #   --long-name <value>       Description
     #   --camelCase, --kebab-case <value>  Description
+    #   --long-name <value>       (term alone; description on following lines)
     m = re.match(
-        r"^  +"  # leading spaces
+        r"^( +)"  # leading spaces
         r"("  # start capture of all flag parts
         r"(?:-[a-zA-Z],\s+)?"  # optional short flag like "-c, "
         r"--[a-zA-Z][-a-zA-Z0-9]*"  # first long flag
         r"(?:,\s+--[a-zA-Z][-a-zA-Z0-9]*)*"  # optional additional long flags
         r")"  # end capture
         r"(\s+<[^>]+>|\s+\[[^\]]+\])?"  # optional value placeholder
-        r"\s{2,}"  # gap before description (at least 2 spaces)
-        r"(.+)",  # description
+        r"(?:\s{2,}(.+)|\s*$)",  # description, or nothing if it was wrapped
         line,
     )
-    if not m:
+    if not m or len(m.group(1)) < 2:
         return None
 
-    flags_part = m.group(1).strip()
-    value_part = (m.group(2) or "").strip()
-    desc = m.group(3).strip()
+    # A term too wide for the column is printed alone, with its description on
+    # the following lines. Accept that only at the 2-space entry indent, so a
+    # wrapped description line that starts with "--" is not taken for a flag.
+    if m.group(4) is None and len(m.group(1)) != 2:
+        return None
+
+    flags_part = m.group(2).strip()
+    value_part = (m.group(3) or "").strip()
+    desc = (m.group(4) or "").strip()
 
     # Parse individual flags
     flag_tokens = [f.strip() for f in flags_part.split(",")]
@@ -166,9 +172,12 @@ def parse_help_output(text):
     current_short = None
     current_value_part = None
     current_desc_lines = []
+    current_wrapped = False  # term printed alone; description on following lines
 
     def finalize_flag():
         nonlocal current_long_flags, current_short, current_value_part, current_desc_lines
+        nonlocal current_wrapped
+        current_wrapped = False
         if current_long_flags is None:
             return
 
@@ -221,11 +230,15 @@ def parse_help_output(text):
                 current_long_flags = long_flags
                 current_short = short
                 current_value_part = value_part
-                current_desc_lines = [desc]
+                current_desc_lines = [desc] if desc else []
+                current_wrapped = not desc
             else:
-                # Check if this is a continuation line (heavily indented, no leading dash)
+                # Check if this is a continuation line: heavily indented under
+                # the description column, or (for a term printed alone) any
+                # line indented deeper than the 2-space entry indent.
                 leading_spaces = len(line) - len(line.lstrip())
-                if leading_spaces >= 15 and current_long_flags is not None:
+                min_indent = 3 if current_wrapped else 15
+                if leading_spaces >= min_indent and current_long_flags is not None:
                     current_desc_lines.append(stripped)
 
         elif section == "commands":
@@ -233,13 +246,20 @@ def parse_help_output(text):
             #   subcommand [options]   Description
             #   update|upgrade         Description
             #   install|i [options]    Description
-            cmd_match = re.match(
-                r"^\s+"
+            #   add [options] <name> <commandOrUrl> [args...]
+            #       Description (term too wide for the column, printed alone)
+            cmd_term = (
                 r"([a-z][-a-z0-9|]*)"  # command name (possibly with aliases)
                 r"(?:\s+\[options\])?"  # optional [options]
                 r"(?:\s+(?:\[command\]|<[^>]+>|\[[^\]]+\]))*"  # optional args
-                r"\s{2,}"  # gap
-                r"(.+)",  # description
+            )
+            cmd_match = re.match(
+                r"^\s+" + cmd_term + r"\s{2,}(.+)",  # gap, then description
+                line,
+            ) or re.match(
+                # Term alone: accept only at the 2-space entry indent, so a
+                # wrapped description line is never taken for a command.
+                r"^  " + cmd_term + r"\s*$",
                 line,
             )
             if cmd_match:

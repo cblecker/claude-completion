@@ -23,6 +23,7 @@ validate:
 
 # Run completion tests
 test: validate
+	python3 scripts/test_parse_help.py
 	bash scripts/test_completion.sh
 
 # Verify generated script matches data (no manual edits)
